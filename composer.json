@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "BookingHotel\\": "src/"
+    }
+  },
+  "require": {
+    "firebase/php-jwt": "^5.0"
+  }
+}
