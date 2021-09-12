@@ -9,6 +9,7 @@ require_once 'vendor/autoload.php';
 require_once 'src/Shares/function.php';
 //require_once 'assets/PHPExcel/Classes/PHPExcel.php';
 //define('PATH_FILE','assets/data.ods');
+
 ini_set("allow_url_fopen", true);
 ini_set('default_charset', 'utf-8');
 App::bind('config/app', require_once 'config/app.php');
@@ -44,3 +45,5 @@ if (Request::method()=='GET' || Request::method()=='DELETE'){
  else {
     Route::Load('config/route.php')->direct(Request::uri(), strtolower(Request::method()));
 }
+///database
+new \BookingHotel\Database\User\UserDB();

@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * @throws Exception
  */
@@ -38,28 +37,12 @@ function uploadFile($aData)
 function checkDataEmpty($aData): bool
 {
     foreach ($aData as $key => $data) {
-        switch ($key) {
-            case 'IDGV':
-                if (empty($data)) {
-                    throw new Exception('ID Giang Vien Không Được Rỗng', 400);
-                }
-                break;
-            case 'TenDA':
-                if (empty($data)) {
-                    throw new Exception('Tên Đồ An Không Được Rỗng', 400);
-                }
-                break;
-            case 'MoTa':
-                if (empty($data)) {
-                    throw new Exception('Mô Tả Không Được Rỗng', 400);
-                }
-                break;
-            case 'DinhKem':
-                if (empty($data)) {
-                    throw new Exception('Đính Kèm Không Được Rỗng', 400);
-                }
-                break;
+        if (empty($data)) {
+            $aError[] = $key;
         }
+    }
+    if (isset($aError)) {
+        throw new Exception(sprintf("Sorry, The params %s is not null", implode(',', $aError)), 400);
     }
     return true;
 }
@@ -67,16 +50,16 @@ function checkDataEmpty($aData): bool
 /**
  * @throws Exception
  */
-function checkDataIsset($defineData,$aRawData):bool
+function checkDataIsset($defineData, $aRawData): bool
 {
-    $aKeyRawData=array_keys($aRawData);
-    foreach ($defineData as $data){
-        if (!in_array($data,$aKeyRawData)){
-            $aError[]=$data;
+    $aKeyRawData = array_keys($aRawData);
+    foreach ($defineData as $data) {
+        if (!in_array($data, $aKeyRawData)) {
+            $aError[] = $data;
         }
     }
-    if (isset($aError) || !empty($aError)){
-        throw new Exception(sprintf("Sorry, The params %s is required",implode(',',$aError)),400);
+    if (isset($aError)) {
+        throw new Exception(sprintf("Sorry, The params %s is required", implode(',', $aError)), 400);
     }
     return true;
 }

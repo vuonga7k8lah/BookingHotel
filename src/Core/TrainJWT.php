@@ -3,6 +3,7 @@
 
 namespace BookingHotel\Core;
 
+use BookingHotel\Models\UserModel;
 use Exception;
 use Firebase\JWT\JWT;
 
@@ -11,17 +12,20 @@ trait TrainJWT
 {
     private $key = 'vuongdttn-1998';
 
-    public function verifyToken($token,$checkUser=false): bool
+    /**
+     * @throws Exception
+     */
+    public function verifyToken($token, $checkUser = false): bool
     {
         try {
             $oInfo = $this->decodeJWT($token);
-            if ($checkUser){
-                return UserModel::isUserExist($oInfo->userName);
-            }else{
-                return UserModel::isUserAdmin($oInfo->userName);
+            if ($checkUser) {
+                return UserModel::isEmailExist($oInfo->email);
+            } else {
+                return UserModel::isEmailExist($oInfo->email);
             }
         } catch (Exception $e) {
-            echo HandleResponse::error( $e->getMessage(),401);die();
+            throw new Exception($e->getMessage(), 401);
         }
     }
 
@@ -29,8 +33,9 @@ trait TrainJWT
     {
         try {
             return JWT::decode($token, $this->key, ['HS256']);
-        }catch (Exception $e) {
-           echo HandleResponse::error($e->getMessage(),401);die();
+        } catch (Exception $e) {
+            echo HandleResponse::error($e->getMessage(), 401);
+            die();
         }
     }
 
@@ -47,5 +52,15 @@ trait TrainJWT
     {
         JWT::$leeway = (!empty($time)) ? $time * 60 * 60 : 864000;
         return $this;
+    }
+
+    public function getTokenHeaders(): string
+    {
+        $token = '';
+        $headers = apache_request_headers();
+        if (isset($headers['token'])) {
+            $token = $headers['token'];
+        }
+        return $token;
     }
 }
