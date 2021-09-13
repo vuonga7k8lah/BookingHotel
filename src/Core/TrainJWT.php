@@ -22,7 +22,7 @@ trait TrainJWT
             if ($checkUser) {
                 return UserModel::isEmailExist($oInfo->email);
             } else {
-                return UserModel::isEmailExist($oInfo->email);
+                return UserModel::isUserAdmin($oInfo->email);
             }
         } catch (Exception $e) {
             throw new Exception($e->getMessage(), 401);
@@ -52,15 +52,5 @@ trait TrainJWT
     {
         JWT::$leeway = (!empty($time)) ? $time * 60 * 60 : 864000;
         return $this;
-    }
-
-    public function getTokenHeaders(): string
-    {
-        $token = '';
-        $headers = apache_request_headers();
-        if (isset($headers['token'])) {
-            $token = $headers['token'];
-        }
-        return $token;
     }
 }

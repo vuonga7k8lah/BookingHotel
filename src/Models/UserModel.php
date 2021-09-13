@@ -50,9 +50,9 @@ class UserModel
         return ($result->num_rows > 0) ? ($result->fetch_assoc())['ID'] : 0;
     }
 
-    public static function isUserAdmin($userName): bool
+    public static function isUserAdmin($email): bool
     {
-        $query = DB::Connect()->query("SELECT * FROM users WHERE userName='" . $userName . "' AND level=2 ")
+        $query = DB::Connect()->query("SELECT * FROM users WHERE email='" . $email . "' AND level=1 ")
             ->fetch_assoc();
         return !empty($query);
     }

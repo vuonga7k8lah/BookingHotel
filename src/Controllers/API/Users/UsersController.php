@@ -5,11 +5,12 @@ namespace BookingHotel\Controllers\API\Users;
 use BookingHotel\Core\HandleResponse;
 use BookingHotel\Core\TrainJWT;
 use BookingHotel\Models\UserModel;
+use BookingHotel\Shares\TrainGetTokenHeader;
 use Exception;
 
 class UsersController
 {
-    use TrainJWT;
+    use TrainJWT, TrainGetTokenHeader;
 
     private array $aDefineCreateUser = ['hoTen', 'username', 'password', 'diaChi', 'ngaySinh', 'CMT', 'role', 'email'];
 
@@ -123,11 +124,15 @@ class UsersController
             if ($this->verifyToken($aData['token'])) {
                 if (checkDataIsset(['ID'], $aData)) {
                     if (checkDataEmpty($aData)) {
-                        $status = UserModel::update($aData['ID'], $aData);
-                        if ($status) {
-                            echo HandleResponse::success('The account is update successfully');
+                        if (UserModel::isEmailExist($aData['email'])) {
+                            $status = UserModel::update($aData['ID'], $aData);
+                            if ($status) {
+                                echo HandleResponse::success('The account is update successfully');
+                            } else {
+                                throw new Exception('The account is update not successfully', 401);
+                            }
                         } else {
-                            throw new Exception('The account is update not successfully', 401);
+                            throw new Exception('Sorry,the email is exist');
                         }
                     }
                 }
@@ -162,8 +167,8 @@ class UsersController
     {
         $aData = $_POST;
         try {
-            if (checkDataIsset(['username','password'],$aData)){
-                if (checkDataEmpty($aData)){
+            if (checkDataIsset(['username', 'password'], $aData)) {
+                if (checkDataEmpty($aData)) {
                     $ID = UserModel::handleLogin($aData);
                     if ($ID) {
                         echo HandleResponse::success('Congratulations, The account login successfully', [
@@ -174,8 +179,8 @@ class UsersController
                     }
                 }
             }
-        }catch (Exception $exception){
-            echo HandleResponse::error($exception->getMessage(),$exception->getCode());
+        } catch (Exception $exception) {
+            echo HandleResponse::error($exception->getMessage(), $exception->getCode());
         }
     }
 

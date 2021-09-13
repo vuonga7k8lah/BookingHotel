@@ -4,6 +4,8 @@
 use BookingHotel\Core\App;
 use BookingHotel\Core\Request;
 use BookingHotel\Core\Route;
+use BookingHotel\Database\Hotel\HotelDB;
+use BookingHotel\Database\User\UserDB;
 
 require_once 'vendor/autoload.php';
 require_once 'src/Shares/function.php';
@@ -15,6 +17,10 @@ ini_set('default_charset', 'utf-8');
 App::bind('config/app', require_once 'config/app.php');
 App::bind('config/route.php', require_once 'config/router.php');
 
+///database
+new UserDB();
+new HotelDB();
+
 //error_reporting(0);
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -23,27 +29,24 @@ header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-if (Request::method()=='GET' || Request::method()=='DELETE'){
-    if (count($_GET) > 1 || count(explode('/', Request::uri()))>1) {
+if (Request::method() == 'GET' || Request::method() == 'DELETE') {
+    if (count($_GET) > 1 || count(explode('/', Request::uri())) > 1) {
         $aData = $_GET;
         unset($aData['route']);
-        if (isset($_GET['route'])){
+        if (isset($_GET['route'])) {
             $aURI = explode('/', $_GET['route']);
             $aData['route'] = $_GET['route'];
-        }else{
-            $aURI=explode('/', Request::uri());
+        } else {
+            $aURI = explode('/', Request::uri());
         }
         if (count($aURI) > 1) {
             $aData['route'] = $aURI[0];
             $aData['ID'] = $aURI[1];
         }
         Route::Load('config/route.php')->directRoute($aData, strtolower(Request::method()));
-    }else{
+    } else {
         Route::Load('config/route.php')->direct(Request::uri(), strtolower(Request::method()));
     }
-}
- else {
+} else {
     Route::Load('config/route.php')->direct(Request::uri(), strtolower(Request::method()));
 }
-///database
-new \BookingHotel\Database\User\UserDB();

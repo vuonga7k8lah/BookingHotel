@@ -1,36 +1,37 @@
 <?php
 return [
     'get'    => [
-        //Shop
+        ////-------------------Shop----------------------
         // Home
-        ''          => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
-        //API
+        ''        => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
+        ////----------------------API-----------
         //User
-        'users'     => 'BookingHotel\Controllers\API\Users\UsersController@getUsers',
-        'users/'     => 'BookingHotel\Controllers\API\Users\UsersController@getUser',
-        'lecturers'  => 'ManageFile\Controller\LecturerController@getLecturers',
-        'lecturers/' => 'ManageFile\Controller\LecturerController@getLecturers',
-        'projects/'  => 'ManageFile\Controller\ManageFIleController@getProjects',
+        'users'   => 'BookingHotel\Controllers\API\Users\UsersController@getUsers',
+        'users/'  => 'BookingHotel\Controllers\API\Users\UsersController@getUser',
+        //Hotel
+        'hotels'  => 'BookingHotel\Controllers\API\Hotels\HotelsController@getHotels',
+        'hotels/' => 'BookingHotel\Controllers\API\Hotels\HotelsController@getHotel',
     ],
     'post'   => [
         //API
         //User
-        'users'     => 'BookingHotel\Controllers\API\Users\UsersController@createUser',
-        'login'     => 'BookingHotel\Controllers\API\Users\UsersController@handleLogin',
-        'projects'  => 'ManageFile\Controller\ManageFIleController@createProject',
-        'lecturers' => 'ManageFile\Controller\LecturerController@createLecturer',
+        'users'  => 'BookingHotel\Controllers\API\Users\UsersController@createUser',
+        'login'  => 'BookingHotel\Controllers\API\Users\UsersController@handleLogin',
+        //Hotel
+        'hotels' => 'BookingHotel\Controllers\API\Hotels\HotelsController@createHotel',
     ],
     'put'    => [
         //API
         //User
-        'users'     => 'BookingHotel\Controllers\API\Users\UsersController@updateUser',
-        'lecturers' => 'ManageFile\Controller\LecturerController@updatelecturer',
+        'users'  => 'BookingHotel\Controllers\API\Users\UsersController@updateUser',
+        //Hotel
+        'hotels' => 'BookingHotel\Controllers\API\Hotels\HotelsController@updateHotel',
     ],
     'delete' => [
         //API
         //User
-        'users/'     => 'BookingHotel\Controllers\API\Users\UsersController@deleteUser',
-        'projects'  => 'ManageFile\Controller\ManageFIleController@deleteProject',
-        'lecturers' => 'ManageFile\Controller\LecturerController@deletelecturer',
+        'users/'  => 'BookingHotel\Controllers\API\Users\UsersController@deleteUser',
+        //Hotel
+        'hotels/' => 'BookingHotel\Controllers\API\Hotels\HotelsController@deleteHotel',
     ]
 ];
