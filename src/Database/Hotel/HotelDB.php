@@ -16,10 +16,12 @@ class HotelDB
         $sql = "CREATE TABLE IF NOT EXISTS hotels (
   MaKS int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   tenKS text NOT NULL,
+  content text NOT NULL,
   diaChi text NOT NULL,
   tenMien text NOT NULL,
   email text NOT NULL,
   website text NOT NULL,
+  rating text NOT NULL,
   createDate timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (MAKS)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";

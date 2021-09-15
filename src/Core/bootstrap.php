@@ -5,6 +5,7 @@ use BookingHotel\Core\App;
 use BookingHotel\Core\Request;
 use BookingHotel\Core\Route;
 use BookingHotel\Database\Hotel\HotelDB;
+use BookingHotel\Database\Location\LocationDB;
 use BookingHotel\Database\User\UserDB;
 
 require_once 'vendor/autoload.php';
@@ -20,6 +21,7 @@ App::bind('config/route.php', require_once 'config/router.php');
 ///database
 new UserDB();
 new HotelDB();
+new LocationDB();
 
 //error_reporting(0);
 header("Access-Control-Allow-Origin: *");
