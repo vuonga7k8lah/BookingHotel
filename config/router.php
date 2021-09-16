@@ -11,6 +11,8 @@ return [
         //Hotel
         'hotels'  => 'BookingHotel\Controllers\API\Hotels\HotelsController@getHotels',
         'hotels/' => 'BookingHotel\Controllers\API\Hotels\HotelsController@getHotel',
+        ////----------------------Admin-----------
+        'a.dashboard'   => 'BookingHotel\Controllers\Admin\Dashboard\DashboardController@getView',
     ],
     'post'   => [
         //API
