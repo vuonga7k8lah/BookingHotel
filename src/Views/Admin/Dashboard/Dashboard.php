@@ -1,5 +1,5 @@
 <?php
-//CheckLoginAdmin();
+CheckLoginAdmin();
 require_once 'src/Views/Admin/header.php';
 require_once 'src/Views/Admin/navigation.php';
 ?>

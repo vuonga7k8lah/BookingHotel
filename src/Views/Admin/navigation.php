@@ -1,3 +1,8 @@
+<?php
+
+use BookingHotel\Core\URL;
+
+?>
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,25 +53,27 @@
                     <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-database fa-fw"></i>Product<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('a.listHotel') ?>"><i class="fa fa-database fa-fw"></i>Hotels<span
+                                class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="">List Product</a>
+                            <a href="<?= URL::uri('a.listHotel') ?>">List Hotels</a>
                         </li>
                         <li>
-                            <a href="">Add Product</a>
+                            <a href="<?= URL::uri('a.addHotel') ?>">Add Hotel</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-building fa-fw"></i> Producer<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('a.listLocation') ?>"><i class="fa fa-building fa-fw"></i> Locations<span
+                                class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="">List Producer</a>
+                            <a href="<?= URL::uri('a.listLocation') ?>">List Locations</a>
                         </li>
                         <li>
-                            <a href="">Add Producer</a>
+                            <a href="<?= URL::uri('a.addLocation') ?>">Add Location</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

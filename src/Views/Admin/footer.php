@@ -4,6 +4,8 @@
 <script src="./assets/dashboard/dist/js/pages/dashboard2.js"></script>
 <!-- jQuery -->
 <script src="./assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- include jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="./assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -20,13 +22,9 @@
 <script src="./assets/admin/js/raphael.min.js"></script>
 <script src="./assets/admin/js/morris.min.js"></script>
 <script src="./assets/admin/js/morris-data.js"></script>
+<script src="./assets/admin/main.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
     function hienthianh() {
         var fileSelected=document.getElementById('upload').files;
         console.log('fileSelected');
@@ -43,6 +41,7 @@
         }
         document.getElementById('anhcu').style.display = "none";
     }
+    CKEDITOR.replace( 'editor1' );
 </script>
 </body>
 

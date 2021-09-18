@@ -5,6 +5,7 @@ namespace BookingHotel\Controllers\API\Hotels;
 use BookingHotel\Core\HandleResponse;
 use BookingHotel\Core\TrainJWT;
 use BookingHotel\Models\HotelModel;
+use BookingHotel\Models\LocationModel;
 use BookingHotel\Shares\TrainGetTokenHeader;
 use Exception;
 
@@ -14,7 +15,9 @@ class HotelsController
 
     public function getHotel($aData)
     {
-        echo HandleResponse::success('data hotel', HotelModel::getHotel($aData['ID']));
+        $aHotel = HotelModel::getHotel($aData['ID']);
+        $aHotel['image'] = json_decode(HotelModel::getHotel($aData['ID'])['image'], true);
+        echo HandleResponse::success('data hotel', $aHotel);
     }
 
     public function getHotels()
@@ -22,13 +25,20 @@ class HotelsController
         $aData = [];
         $aHotel = HotelModel::getHotels();
         foreach ($aHotel as $aItem) {
+            $aDiaDiem = LocationModel::getLocation($aItem[1]);
+            $aDiaDiem['image'] = json_decode(LocationModel::getLocation($aItem[1])['image'], true);
             $aData[] = [
-                'tenKS'      => $aItem[1],
-                'diaChi'     => $aItem[2],
-                'tenMien'    => $aItem[3],
-                'email'      => $aItem[4],
-                'website'    => $aItem[5],
-                'createDate' => $aItem[6],
+                'MaKS'       => $aItem[1],
+                'tenKS'      => $aItem[2],
+                'diaDiem'    => $aDiaDiem,
+                'content'    => $aItem[3],
+                'diaChi'     => $aItem[4],
+                'tenMien'    => $aItem[5],
+                'email'      => $aItem[6],
+                'website'    => $aItem[7],
+                'rating'     => $aItem[8],
+                'image'      => json_decode($aItem[9], true),
+                'createDate' => $aItem[10],
             ];
         }
         echo HandleResponse::success('list hotels', $aData);
