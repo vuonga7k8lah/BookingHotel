@@ -29,6 +29,11 @@ return [
         'a.editLocation/'   => 'BookingHotel\Controllers\Admin\Location\LocationController@getEditView',
         'a.deleteLocation/' => 'BookingHotel\Controllers\Admin\Location\LocationController@handleDelete',
         'a.listLocation'    => 'BookingHotel\Controllers\Admin\Location\LocationController@getListView',
+        //// Room
+        'a.addRoom'         => 'BookingHotel\Controllers\Admin\Room\RoomController@getAddView',
+        'a.editRoom/'       => 'BookingHotel\Controllers\Admin\Room\RoomController@getEditView',
+        'a.deleteRoom/'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleDelete',
+        'a.listRoom'        => 'BookingHotel\Controllers\Admin\Room\RoomController@getListView',
     ],
     'post'   => [
         //API
@@ -45,6 +50,9 @@ return [
         //// Locations
         'a.addLocation'  => 'BookingHotel\Controllers\Admin\Location\LocationController@handleAdd',
         'a.editLocation' => 'BookingHotel\Controllers\Admin\Location\LocationController@handleEdit',
+        //// Rooms
+        'a.addRoom'      => 'BookingHotel\Controllers\Admin\Room\RoomController@handleAdd',
+        'a.editRoom'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleEdit',
         //// upload
         'a.upload'       => 'BookingHotel\Controllers\Admin\Upload\UploadController@handleUpload',
     ],

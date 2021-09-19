@@ -79,13 +79,13 @@ use BookingHotel\Core\URL;
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-cube fa-fw"></i> Type Product<span class="fa arrow"></span></a>
+                    <a href=""><i class="fa fa-cube fa-fw"></i>Rooms<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="">List Type</a>
+                            <a href="<?=URL::uri('a.listRoom')?>">List Room</a>
                         </li>
                         <li>
-                            <a href="">Add Type</a>
+                            <a href="<?=URL::uri('a.addRoom')?>">Add Room</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

@@ -9,28 +9,42 @@ require_once 'src/Views/Shop/navigation.php';
             </a>
         </div>
         <section class="home-slider owl-carousel">
-            <div class="slider-item" style="background-image:url(assets/Shop/images/bg_1.jpg);">
+            <div class="slider-item" style="background-image:url(https://c4.wallpaperflare.com/wallpaper/470/673/182/nha-trang-beach-tour-1-wallpaper-preview.jpg);">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row no-gutters slider-text align-items-center">
                         <div class="col-md-8 ftco-animate">
                             <div class="text mb-5 pb-5">
-                                <h1 class="mb-3">Roxandrea</h1>
-                                <h2>More than a hotel... an experience</h2>
+                                <h1 class="mb-3">Nha Trang</h1>
+                                <h2>Điểm Du Lịch,Nghỉ Dưỡng,Sinh Thái</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slider-item" style="background-image:url(assets/Shop/images/bg_2.jpg);">
+            <div class="slider-item" style="background-image:url(https://file1.dangcongsan.vn/data/0/images/2020/04/02/hacuong/46401633.jpg);">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row no-gutters slider-text align-items-center">
                         <div class="col-md-8 ftco-animate">
                             <div class="text mb-5 pb-5">
-                                <h1 class="mb-3">Experience Epic Beauty</h1>
-                                <h2>Roxandrea Hotel &amp; Resort</h2>
+                                <h1 class="mb-3">Hà Nội</h1>
+                                <h2>Hà Nội Nghìn Năm Văn Hiến</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item" style="background-image:url(https://sites.google.com/site/dialitinhthainguyen/_/rsrc/1468738799975/thu-vien-hinh-anh/hinh-anh-tieu-bieu-ve-thai-nguyen/ban-nhot-motul-chinh-hang-tai-thai-nguyen-201.jpg?height=269&width=400);">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row no-gutters slider-text align-items-center">
+                        <div class="col-md-8 ftco-animate">
+                            <div class="text mb-5 pb-5">
+                                <h1 class="mb-3">Thái Nguyên</h1>
+                                <h2>Đầu Não Của Chiến Khu Việt Bắc</h2>
                             </div>
                         </div>
                     </div>
@@ -118,8 +132,7 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-3">
-                    <a href="#" class="services-wrap img align-items-end d-flex" style="background-image: url
-                    (assets/Shop/images/room-3.jpg);">
+                    <a href="#" class="services-wrap img align-items-end d-flex" style="background-image: url(assets/Shop/images/room-3.jpg);">
                         <div class="text text-center pb-2">
                             <h3>Special Rooms</h3>
                         </div>
@@ -140,14 +153,11 @@ require_once 'src/Views/Shop/navigation.php';
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <div class="services-wrap services-overlay img align-items-center d-flex" style="background-image: url(assets/Shop/images/sleep.jpg);">
+                    <div class="services-wrap img align-items-end d-flex" style="background-image: url(assets/Shop/images/sleep.jpg);">
                         <div class="text text-center pb-2">
                             <h3 class="mb-0">Suites &amp; Rooms</h3>
                             <span>Special Rooms</span>
                             <div class="d-flex mt-2 justify-content-center">
-                                <div class="icon">
-                                    <a href="#"><span class="ion-ios-arrow-forward"></span></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -174,18 +184,6 @@ require_once 'src/Views/Shop/navigation.php';
                         </div>
                         <div class="media-body">
                             <h3 class="heading mb-3">Friendly Service</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services active py-4 d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="flaticon-serving-dish"></span>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading mb-3">Get Breakfast</h3>
                         </div>
                     </div>
                 </div>
@@ -416,140 +414,6 @@ require_once 'src/Views/Shop/navigation.php';
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb px-0">
-        <div class="container-fluid px-0">
-            <div class="row no-gutters justify-content-end">
-                <div class="col-md-12">
-                    <div id="home" class="video-hero" style="height: 800px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: center center;">
-                        <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=ism1XqnZJEg',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a>
-                        <div class="container">
-                            <div class="row justify-content-start d-flex align-items-end height-text ">
-                                <div class="col-md-8">
-                                    <div class="text">
-                                        <h1>We're Most Recommended Hotel</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section ftco-menu" style="background-image: url(images/restaurant-pattern.jpg);">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Restaurant</span>
-                    <h2>Restaurant</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img order-md-last" style="background-image: url(images/menu-1.jpg);"></div>
-                        <div class="desc pr-3 text-md-right">
-                            <div class="d-md-flex text align-items-center">
-                                <h3 class="order-md-last heading-left"><span>Grilled Crab with Onion</span></h3>
-                                <span class="price price-left">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img order-md-last" style="background-image: url(images/menu-2.jpg);"></div>
-                        <div class="desc pr-3 text-md-right">
-                            <div class="d-md-flex text align-items-center">
-                                <h3 class="order-md-last heading-left"><span>Grilled Beef with potatoes</span></h3>
-                                <span class="price price-left">$29.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img order-md-last" style="background-image: url(images/menu-3.jpg);"></div>
-                        <div class="desc pr-3 text-md-right">
-                            <div class="d-md-flex text align-items-center">
-                                <h3 class="order-md-last heading-left"><span>Grilled Beef with potatoes</span></h3>
-                                <span class="price price-left">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img order-md-last" style="background-image: url(images/menu-4.jpg);"></div>
-                        <div class="desc pr-3 text-md-right">
-                            <div class="d-md-flex text align-items-center">
-                                <h3 class="order-md-last heading-left"><span>Grilled Beef with potatoes</span></h3>
-                                <span class="price price-left">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/menu-5.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-md-flex text align-items-center">
-                                <h3><span>Grilled Beef with potatoes</span></h3>
-                                <span class="price">$49.91</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/menu-6.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-md-flex text align-items-center">
-                                <h3><span>Ultimate Overload</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/menu-7.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-md-flex text align-items-center">
-                                <h3><span>Grilled Beef with potatoes</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pricing-entry d-flex ftco-animate">
-                        <div class="img" style="background-image: url(images/menu-8.jpg);"></div>
-                        <div class="desc pl-3">
-                            <div class="d-md-flex text align-items-center">
-                                <h3><span>Ham &amp; Pineapple</span></h3>
-                                <span class="price">$20.00</span>
-                            </div>
-                            <div class="d-block">
-                                <p>A small river named Duden flows by their place and supplies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <section class="ftco-section">
@@ -620,35 +484,35 @@ require_once 'src/Views/Shop/navigation.php';
             </div>
             <div class="row no-gutters">
                 <div class="col-sm-12 col-md ftco-animate">
-                    <a href="images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(images/insta-1.jpg);">
+                    <a href="assets/uploads/6909688416146fb66c48210.33071835.jpg" class="insta-img image-popup" style="background-image: url(assets/uploads/6909688416146fb66c48210.33071835.jpg);">
                         <div class="icon d-flex justify-content-center">
                             <span class="icon-instagram align-self-center"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-12 col-md ftco-animate">
-                    <a href="images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(images/insta-2.jpg);">
+                    <a href="assets/uploads/7257669526147430fcf3674.43101840.jpg" class="insta-img image-popup" style="background-image: url(assets/uploads/7257669526147430fcf3674.43101840.jpg);">
                         <div class="icon d-flex justify-content-center">
                             <span class="icon-instagram align-self-center"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-12 col-md ftco-animate">
-                    <a href="images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(images/insta-3.jpg);">
+                    <a href="assets/uploads/8886956696146fc59e4ca63.99132776.jpg" class="insta-img image-popup" style="background-image: url(assets/uploads/8886956696146fc59e4ca63.99132776.jpg);">
                         <div class="icon d-flex justify-content-center">
                             <span class="icon-instagram align-self-center"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-12 col-md ftco-animate">
-                    <a href="images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(images/insta-4.jpg);">
+                    <a href="assets/uploads/187042850461470011511852.15265799.jpg" class="insta-img image-popup" style="background-image: url(assets/uploads/187042850461470011511852.15265799.jpg);">
                         <div class="icon d-flex justify-content-center">
                             <span class="icon-instagram align-self-center"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-12 col-md ftco-animate">
-                    <a href="images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(images/insta-5.jpg);">
+                    <a href="assets/uploads/673696446147417f4b47a9.67030792.jpg" class="insta-img image-popup" style="background-image: url(assets/uploads/673696446147417f4b47a9.67030792.jpg);">
                         <div class="icon d-flex justify-content-center">
                             <span class="icon-instagram align-self-center"></span>
                         </div>

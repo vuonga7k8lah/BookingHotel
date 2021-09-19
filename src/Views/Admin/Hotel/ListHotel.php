@@ -1,8 +1,12 @@
 <?php
+
+use BookingHotel\Core\URL;
+use BookingHotel\Models\HotelModel;
+
 CheckLoginAdmin();
 require_once 'src/Views/Admin/header.php';
 require_once 'src/Views/Admin/navigation.php';
-$row=\BookingHotel\Models\HotelModel::getHotels();
+$row = HotelModel::getHotels();
 ?>
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -19,9 +23,7 @@ $row=\BookingHotel\Models\HotelModel::getHotels();
                         <th>STT</th>
                         <th>Tên Khách Sạn</th>
                         <th>Địa Chỉ</th>
-                        <th>Tên Miền</th>
                         <th>Website</th>
-                        <th>Email</th>
                         <th>Chi tiết</th>
                         <th>Ảnh</th>
                         <th>Delete</th>
@@ -33,18 +35,17 @@ $row=\BookingHotel\Models\HotelModel::getHotels();
                     foreach ($row as $key => $val): ?>
                         <tr class="odd gradeX" align="center">
                             <td><?= $i ?></td>
-                            <td><?= $val[1] ?></td>
+                            <td><?= $val[2] ?></td>
                             <td><?= $val[4] ?></td>
-                            <td><?= $val[5] ?></td>
-                            <td><?= $val[6] ?></td>
                             <td><?= $val[7] ?></td>
-                            <td style="text-align: center"><?= the_excerpt($val[3]).'...' ?></td>
+                            <td style="text-align: center"><?= html_entity_decode(the_excerpt($val[3])) . '...' ?></td>
                             <td style="float: left;width: 120px;text-align: center"><?php LoadAnh($val[9]); ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                    href="<?=\BookingHotel\Core\URL::uri('a.deleteHotel').'/'.$val[0]?>">
+                                        href="<?= URL::uri('a.deleteHotel') . '/' . $val[0] ?>">
                                     Delete</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                    href="<?=\BookingHotel\Core\URL::uri('a.editHotel').'/'.$val[0]?>">Edit</a></td>
+                                        href="<?= URL::uri('a.editHotel') . '/' .
+                                        $val[0] ?>">Edit</a></td>
                         </tr>
                         <?php $i++;
                     endforeach; ?>

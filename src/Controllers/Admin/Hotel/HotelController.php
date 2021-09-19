@@ -2,6 +2,7 @@
 
 namespace BookingHotel\Controllers\Admin\Hotel;
 
+use BookingHotel\Core\Request;
 use BookingHotel\Core\Session;
 use BookingHotel\Core\URL;
 use BookingHotel\Models\HotelModel;
@@ -59,6 +60,20 @@ class HotelController
         } catch (Exception $exception) {
             Session::set('error_editHotel', $exception->getMessage());
             URL::redirect('a.editHotel');
+        }
+    }
+    public function handleDelete()
+    {
+        $MaKS=Request::getIDOnURL();
+        try {
+            $id=HotelModel::delete($MaKS);
+            if ($id) {
+                URL::redirect('a.listHotel');
+            } else {
+                throw new Exception('sorry, the hotel had not delete successfully');
+            }
+        } catch (Exception $exception) {
+            URL::redirect('a.listHotel');
         }
     }
 }
