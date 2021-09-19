@@ -17,7 +17,7 @@ require_once 'src/Views/Admin/navigation.php';
                 </div>
 
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-7" style="padding-bottom:120px">
+                <div class="col-lg-8" style="padding-bottom:120px">
                     <?php if (isset($_SESSION['error_addLocation'])): ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
