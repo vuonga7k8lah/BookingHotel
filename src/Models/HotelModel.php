@@ -22,6 +22,11 @@ class HotelModel
         return DB::Connect()->query("SELECT * FROM hotels")->fetch_all();
     }
 
+    public static function getHotelsWithLocationID($locationID)
+    {
+        return DB::Connect()->query("SELECT * FROM hotels WHERE MaDD='.$locationID.'")->fetch_all();
+    }
+
     public static function getHotel($id): ?array
     {
         $sql = "SELECT * FROM hotels WHERE MaKS = " . $id;

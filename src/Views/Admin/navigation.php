@@ -13,7 +13,7 @@ use BookingHotel\Core\URL;
         </button>
         <a class="navbar-brand" href="">Admin</a>
         <ul class="nav navbar-nav navbar-left navbar-top-links">
-            <li><a href=""><i class="fa fa-home fa-fw"></i> Website </a></li>
+            <li><a href="<?= URL::uri() ?>"><i class="fa fa-home fa-fw"></i> Website </a></li>
         </ul>
     </div>
     <!-- /.navbar-header -->
@@ -30,7 +30,7 @@ use BookingHotel\Core\URL;
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href=""><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="<?= URL::uri('a.logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -50,7 +50,7 @@ use BookingHotel\Core\URL;
                 <!--                </li>-->
                 <!-- /input-group -->
                 <li>
-                    <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="<?= URL::uri('a.dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="<?= URL::uri('a.listHotel') ?>"><i class="fa fa-database fa-fw"></i>Hotels<span

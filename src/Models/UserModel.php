@@ -59,10 +59,7 @@ class UserModel
 
     public static function insert($aData): int
     {
-        $sql = "INSERT INTO `users`(`ID`, `hoTen`, `username`, `password`, `ngaySinh`, `CMT`, `diaChi`, `level`, `token`,`email`, `code`, `createDate`) VALUES (null,'" .
-            $aData['hoTen'] . "','" . $aData['username'] . "','" . $aData['password'] . "','" . $aData['ngaySinh'] .
-            "'," . $aData['CMT'] . ",'" . $aData['diaChi'] . "','" . $aData['role'] . "','','" . $aData['email'] .
-            "','',null)";
+        $sql = "INSERT INTO `users`(`ID`, `hoTen`, `username`, `password`, `SDT`, `level`, `token`,`email`, `code`, `createDate`) VALUES (null,'" . $aData['hoTen'] . "','" . $aData['username'] . "','" . $aData['password'] . "'," . $aData['SDT'] . ",'" . $aData['role'] . "','','" . $aData['email'] . "','',null)";
         $insert = DB::Connect()
             ->query($sql);
         if ($insert) {
@@ -90,14 +87,8 @@ class UserModel
         if ($aData['username'] ?? '') {
             $query[] = " username ='" . $aData['username'] . "'";
         }
-        if ($aData['ngaySinh'] ?? '') {
-            $query [] = " ngaySinh = '" . $aData['ngaySinh'] . "'";
-        }
-        if ($aData['CMT'] ?? '') {
-            $query [] = " CMT = '" . $aData['CMT'] . "'";
-        }
-        if ($aData['diaChi'] ?? '') {
-            $query [] = " diaChi = '" . $aData['diaChi'] . "'";
+        if ($aData['SDT'] ?? '') {
+            $query [] = " SDT = '" . $aData['SDT'] . "'";
         }
         if ($aData['email'] ?? '') {
             $query [] = " email = '" . $aData['email'] . "'";

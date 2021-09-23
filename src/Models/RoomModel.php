@@ -11,13 +11,19 @@ class RoomModel
         $DB = DB::Connect();
         $query
             = $DB->query("INSERT INTO `rooms`(`MaPhong`, `MaKS`, `tenPhong`, `content`, `gia`,  `image`, `createDate`) VALUES (null,'" .
-            $aData['MaKS'] . "','" . $aData['tenPhong'] . "','" . $aData['content'] . "','" . $aData['gia'] . "','" . $aData['image'] . "',null)");
+            $aData['MaKS'] . "','" . $aData['tenPhong'] . "','" . $aData['content'] . "','" . $aData['gia'] . "','" .
+            $aData['image'] . "',null)");
         return ($query) ? $DB->insert_id : 0;
     }
 
     public static function getRooms()
     {
         return DB::Connect()->query("SELECT * FROM rooms")->fetch_all();
+    }
+
+    public static function getRoomsByMaKS($MaKS)
+    {
+        return DB::Connect()->query("SELECT * FROM rooms WHERE MaKS='.$MaKS.'")->fetch_all();
     }
 
     public static function getRoom($id): ?array

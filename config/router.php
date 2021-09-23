@@ -4,6 +4,9 @@ return [
         ////-------------------Shop----------------------
         // Home
         ''                  => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
+        // Display
+        'location/'         => 'BookingHotel\Controllers\Shop\Display\DisplayController@getListHotel',
+        'detailsRoom/'      => 'BookingHotel\Controllers\Shop\Display\DisplayController@getDetailsRoom',
         ////----------------------API-----------
         //User
         'users'             => 'BookingHotel\Controllers\API\Users\UsersController@getUsers',
@@ -19,6 +22,8 @@ return [
         'a.dashboard'       => 'BookingHotel\Controllers\Admin\Dashboard\DashboardController@getView',
         //// login
         'a.login'           => 'BookingHotel\Controllers\Admin\Login\LoginController@getView',
+        //// logout
+        'a.logout'          => 'BookingHotel\Controllers\Admin\Logout\LogoutController@handleLogout',
         //// Hotels
         'a.addHotel'        => 'BookingHotel\Controllers\Admin\Hotel\HotelController@getAddView',
         'a.editHotel/'      => 'BookingHotel\Controllers\Admin\Hotel\HotelController@getEditView',

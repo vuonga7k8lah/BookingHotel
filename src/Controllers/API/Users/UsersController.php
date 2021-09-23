@@ -12,7 +12,7 @@ class UsersController
 {
     use TrainJWT, TrainGetTokenHeader;
 
-    private array $aDefineCreateUser = ['hoTen', 'username', 'password', 'diaChi', 'ngaySinh', 'CMT', 'role', 'email'];
+    private array $aDefineCreateUser = ['hoTen', 'username', 'password', 'SDT', 'role', 'email'];
 
     public function getUser($aData)
     {
@@ -31,12 +31,9 @@ class UsersController
                 'ID'         => $oUSer[0],
                 'hoTen'      => $oUSer[1],
                 'username'   => $oUSer[2],
-                'ngaySinh'   => $oUSer[4],
-                'CMT'        => $oUSer[5],
-                'diaChi'     => $oUSer[6],
-                'email'      => $oUSer[9],
-                'role'       => $oUSer[7],
-                'createDate' => $oUSer[11],
+                'email'      => $oUSer[7],
+                'role'       => $oUSer[5],
+                'createDate' => $oUSer[9],
             ];
         }
         echo HandleResponse::success('List user', $aUser);
@@ -84,10 +81,7 @@ class UsersController
             if (checkDataIsset($this->aDefineCreateUser, $aData)) {
                 if (checkDataEmpty($aData)) {
                     $aData['password'] = md5($_POST['password']);
-                    if (!(strlen(trim($aData['CMT'])) <= 11)) {
-                        throw new Exception('Số Chứng Minh Thư Phải dưới 11 số', 401);
-                    }
-                    $aData['CMT'] = (int)$_POST['CMT'];
+                    $aData['SDT'] = (int)$_POST['SDT'];
                     if (!UserModel::isEmailExist($aData['email'])) {
                         if ($this->verifyToken($aData['token'])) {
                             $userID = UserModel::insert($aData);
@@ -100,9 +94,11 @@ class UsersController
                                 ]);
                                 UserModel::updateToken($userID, $token);
                                 echo HandleResponse::success('The account create successfully');
+                            } else {
+                                throw new Exception('The account not create successfully', 401);
                             }
                         } else {
-                            throw new Exception('User not access', 401);
+                            throw new Exception('User not permission access', 401);
                         }
                     } else {
                         throw new Exception('Sorry,the account is exist', 401);

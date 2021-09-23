@@ -65,6 +65,7 @@
 
 
 <script src="./assets/Shop/js/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./assets/Shop/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="./assets/Shop/js/popper.min.js"></script>
 <script src="./assets/Shop/js/bootstrap.min.js"></script>
@@ -79,9 +80,12 @@
 <script src="./assets/Shop/js/bootstrap-datepicker.js"></script>
 <!-- // <script src="js/jquery.timepicker.min.js"></script> -->
 <script src="./assets/Shop/js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="./assets/Shop/js/google-map.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false-->
+<!--"></script>-->
+<!--<script src="./assets/Shop/js/google-map.js"></script>-->
 <script src="./assets/Shop/js/main.js"></script>
+<script src="./assets/Shop/main.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 
 </body>
 </html>
