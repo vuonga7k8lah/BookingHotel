@@ -1087,23 +1087,32 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đến</label>
                                             <div class="col-sm-10">
-                                                <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s') ?>">
+                                                <input type="datetime-local" id="bookRoom_startDate" value="<?= date('Y-m-d\TH:i:s') ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đi</label>
                                             <div class="col-sm-10">
-                                                <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s') ?>">
+                                                <input type="datetime-local" id="bookRoom_endDate" value="<?= date('Y-m-d\TH:i:s') ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Giá</label>
                                             <div class="col-sm-10">
-                                                <input type="text" disabled value="<?= $aRoom['gia'] ?>">
+                                                <input type="text" id="bookRoom_gia" disabled readonly value="<?=
+                                                $aRoom['gia'] ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-
+                                            <div class="mb-3 row">
+                                                <label for="staticEmail" class="col-sm-2 col-form-label">Tên
+                                                    Phòng</label>
+                                                <input type="hidden" id="bookRoom_idPhong" value="<?=$aRoom['MaPhong']?>">
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="bookRoom_tenPhong" disabled readonly
+                                                           value="<?= $aRoom['tenPhong'] ?>">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
@@ -1131,31 +1140,37 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                             <h2>Nhập thông tin chi tiết của bạn</h2>
                                             <form>
                                                 <div class="mb-3">
-                                                    <label for="exampleInputEmail1" class="form-label" style="font-weight: bold">Email address</label>
+                                                    <label for="bookRoom_email" class="form-label" style="font-weight: bold">Email address</label>
                                                     <input type="email" name="email" class="form-control"
-                                                           id="exampleInputEmail1"
+                                                           required
+                                                           id="bookRoom_email"
                                                            aria-describedby="emailHelp">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="fullName" class="form-label" style="font-weight: bold">Họ Và Tên</label>
-                                                    <input type="text" name="fullName" class="form-control"
-                                                           id="fullName">
+                                                    <label for="bookRoom_fullName" class="form-label" style="font-weight: bold">Họ Và Tên</label>
+                                                    <input type="text" required name="fullName" class="form-control"
+                                                           id="bookRoom_fullName">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="sdt" class="form-label" style="font-weight: bold">Số Điện Thoại</label>
+                                                    <label for="sdt" required class="form-label" style="font-weight: bold">Số
+                                                        Điện Thoại</label>
                                                     <input type="number" name="sdt" class="form-control"
-                                                           id="sdt">
+                                                           id="bookRoom_sdt">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold">Yêu Cầu Đặc Biệt</label>
+                                                    <label for="bookRoom_request" class="form-label" style="font-weight: bold">Yêu Cầu Đặc Biệt</label>
                                                     <div id="emailHelp" class="form-text">Các yêu cầu đặc biệt không đảm bảo sẽ được đáp ứng – tuy nhiên, chỗ nghỉ sẽ cố gắng hết sức để thực hiện. Bạn luôn có thể gửi yêu cầu đặc biệt sau khi hoàn tất đặt phòng của mình!</div>
-                                                    <textarea name="info" class="form-control" id="exampleFormControlTextarea1"
+                                                    <textarea name="request" class="form-control" id="bookRoom_request"
                                                                rows="3"></textarea>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary" style="display: block;
+                                                <button type="submit" id="btn-submit-bookRoom" class="btn btn-primary"
+                                                        style="display: block;
                                                 margin: 0 auto;">Submit</button>
                                             </form>
                                         </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="bookRoomQRCode"></div>
                                     </div>
                                 </div>
                             </div>

@@ -7,12 +7,6 @@ require_once 'src/Views/Shop/header.php';
 require_once 'src/Views/Shop/navigation.php';
 ?>
     <div class="hero">
-        <div class="container-wrap d-flex justify-content-end align-items-end">
-            <a href="https://www.youtube.com/watch?v=ism1XqnZJEg"
-               class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-                <span class="ion-ios-play play"></span>
-            </a>
-        </div>
         <section class="home-slider owl-carousel">
             <div class="slider-item"
                  style="background-image:url(https://c4.wallpaperflare.com/wallpaper/470/673/182/nha-trang-beach-tour-1-wallpaper-preview.jpg);">

@@ -17,6 +17,8 @@ return [
         //Location
         'locations'         => 'BookingHotel\Controllers\API\Location\LocationController@getLocations',
         'locations/'        => 'BookingHotel\Controllers\API\Location\LocationController@getLocation',
+        //Search
+        'search-hotels/'    => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotels',
         ////----------------------Admin-----------
         //// Dashboard
         'a.dashboard'       => 'BookingHotel\Controllers\Admin\Dashboard\DashboardController@getView',
@@ -41,12 +43,17 @@ return [
         'a.listRoom'        => 'BookingHotel\Controllers\Admin\Room\RoomController@getListView',
     ],
     'post'   => [
-        //API
+        //------------------------------------API
         //User
         'users'          => 'BookingHotel\Controllers\API\Users\UsersController@createUser',
         'login'          => 'BookingHotel\Controllers\API\Users\UsersController@handleLogin',
         //Hotel
         'hotels'         => 'BookingHotel\Controllers\API\Hotels\HotelsController@createHotel',
+        //Search
+        'search-hotels'  => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotel',
+        //------------------------------------Shop
+        //bookRoom
+        'bookRoom'       => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@handleBookRoom',
         ////----------------------Admin-----------
         'a.login'        => 'BookingHotel\Controllers\Admin\Login\LoginController@handleLogin',
         //// Hotels

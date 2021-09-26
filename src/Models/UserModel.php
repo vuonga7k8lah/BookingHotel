@@ -28,6 +28,12 @@ class UserModel
         return !empty($result->num_rows);
     }
 
+    public static function getQRCode($userID): string
+    {
+        $result = DB::Connect()->query("SELECT qrcode FROM users WHERE ID='".$userID."'")->fetch_assoc();
+        return !empty($result) ? $result['qrcode'] : '';
+    }
+
     public static function isUserExist($userName): bool
     {
         return !empty(self::getID($userName));
@@ -59,7 +65,13 @@ class UserModel
 
     public static function insert($aData): int
     {
-        $sql = "INSERT INTO `users`(`ID`, `hoTen`, `username`, `password`, `SDT`, `level`, `token`,`email`, `code`, `createDate`) VALUES (null,'" . $aData['hoTen'] . "','" . $aData['username'] . "','" . $aData['password'] . "'," . $aData['SDT'] . ",'" . $aData['role'] . "','','" . $aData['email'] . "','',null)";
+        if (!isset($aData['role'])) {
+            $aData['role'] = 3;
+        }
+        $sql
+            = "INSERT INTO `users`(`ID`, `hoTen`, `username`, `password`, `SDT`, `level`, `token`,`email`, `code`, `createDate`) VALUES (null,'" .
+            $aData['hoTen'] . "','" . $aData['username'] . "','" . $aData['password'] . "'," . $aData['SDT'] . ",'" .
+            $aData['role'] . "','','" . $aData['email'] . "','',null)";
         $insert = DB::Connect()
             ->query($sql);
         if ($insert) {
@@ -71,6 +83,11 @@ class UserModel
     public static function updateToken($id, $token)
     {
         return DB::Connect()->query("UPDATE  users SET token='" . $token . "' WHERE ID='" . $id . "'");
+    }
+
+    public static function updateQRCode($id, $QRCode)
+    {
+        return DB::Connect()->query("UPDATE  users SET qrcode='" . $QRCode . "' WHERE ID='" . $id . "'");
     }
 
     public static function getAllUser(): ?array

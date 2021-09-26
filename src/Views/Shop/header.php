@@ -1,10 +1,15 @@
+<?php
+
+use BookingHotel\Core\URL;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Hotel VuongDTTN</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <base href="<?=\BookingHotel\Core\URL::uri();?>">
+    <base href="<?= URL::uri(); ?>">
     <link rel="shortcut icon" type="image/png" href="./assets/IMG/hotel.jpeg"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
@@ -28,6 +33,21 @@
     <link rel="stylesheet" href="./assets/Shop/css/icomoon.css">
     <link rel="stylesheet" href="./assets/Shop/css/style.css">
     <link rel="stylesheet" href="./assets/Shop/css/comment.css">
-    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css"
+          integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+    <script type="text/javascript">window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "54e61e15-d653-477c-ba55-d88862973a0c";
+        (function () {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();</script>
+    <script>
+        let GLOBAL_HOTEL = {
+            "url": "<?=URL::uri();?>"
+        }
+    </script>
 </head>
 <body>
