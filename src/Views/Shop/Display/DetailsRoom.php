@@ -48,6 +48,7 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                             <?= $aRoom['content'] ?>
                         </div>
 
+
                         <div class="col-md-12 properties-single ftco-animate mb-5 mt-4">
                             <div class="container">
                                 <div class="col-md-12">
@@ -992,12 +993,10 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                 </div>
                 <div class="col-lg-4 sidebar ftco-animate">
                     <div class="sidebar-box">
-                        <form action="#" class="search-form">
-                            <div class="form-group">
-                                <span class="icon ion-ios-search"></span>
-                                <input type="text" class="form-control" placeholder="Search...">
-                            </div>
-                        </form>
+                        <button type="button" id="btn-booking_<?= $aRoom['MaPhong'] ?>" class="btn btn-lg btn-primary"
+                                style="display: block;margin:0
+                        auto">Đặt Ngay
+                        </button>
                     </div>
                     <div class="sidebar-box ftco-animate">
                         <div class="categories">
@@ -1016,7 +1015,8 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                             <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                        blind texts</a></h3>
                                 <div class="meta">
                                     <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
                                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -1027,7 +1027,8 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
                             <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                        blind texts</a></h3>
                                 <div class="meta">
                                     <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
                                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -1038,7 +1039,8 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
                             <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                        blind texts</a></h3>
                                 <div class="meta">
                                     <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
                                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -1064,10 +1066,103 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
 
                     <div class="sidebar-box ftco-animate">
                         <h3>Paragraph</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem
+                            necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente
+                            consectetur similique, inventore eos fugit cupiditate numquam!</p>
                     </div>
                 </div>
             </div> <!-- .col-md-8 -->
+            <div class="modal fade" id="bookingModal_<?= $aRoom['MaPhong'] ?>" tabindex="-1"
+                 aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header" style="display: block;margin: 0 auto">
+                            <h5 class="modal-title">Chi Tiết Đặt Phòng</h5>
+                        </div>
+                        <div class="modal-body modal-xl">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3 row">
+                                            <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đến</label>
+                                            <div class="col-sm-10">
+                                                <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s') ?>">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đi</label>
+                                            <div class="col-sm-10">
+                                                <input type="datetime-local" value="<?= date('Y-m-d\TH:i:s') ?>">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="staticEmail" class="col-sm-2 col-form-label">Giá</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" disabled value="<?= $aRoom['gia'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="col-lg-12">
+                                            <div class="room-wrap d-md-flex" style="height: 300px">
+                                                <a href="" class="img"
+                                                   style="background-image:url(<?= $srcHotel ?>);height: 300px;"></a>
+                                                <div class="half left-arrow d-flex align-items-center">
+                                                    <div class="text p-4 p-xl-5 text-center">
+                                                        <p class="star mb-0"><span class="ion-ios-star">
+                                                        <p class="star mb-0">
+                                                            <span class="ion-ios-star"></span>
+                                                            <span class="ion-ios-star"></span>
+                                                            <span class="ion-ios-star"></span>
+                                                            <span class="ion-ios-star"></span>
+                                                            <span class="ion-ios-star"></span>
+                                                        </p>
+                                                        <h3 class="mb-3"><?= $aHotel['tenKS'] ?></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <h2>Nhập thông tin chi tiết của bạn</h2>
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label" style="font-weight: bold">Email address</label>
+                                                    <input type="email" name="email" class="form-control"
+                                                           id="exampleInputEmail1"
+                                                           aria-describedby="emailHelp">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="fullName" class="form-label" style="font-weight: bold">Họ Và Tên</label>
+                                                    <input type="text" name="fullName" class="form-control"
+                                                           id="fullName">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="sdt" class="form-label" style="font-weight: bold">Số Điện Thoại</label>
+                                                    <input type="number" name="sdt" class="form-control"
+                                                           id="sdt">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold">Yêu Cầu Đặc Biệt</label>
+                                                    <div id="emailHelp" class="form-text">Các yêu cầu đặc biệt không đảm bảo sẽ được đáp ứng – tuy nhiên, chỗ nghỉ sẽ cố gắng hết sức để thực hiện. Bạn luôn có thể gửi yêu cầu đặc biệt sau khi hoàn tất đặt phòng của mình!</div>
+                                                    <textarea name="info" class="form-control" id="exampleFormControlTextarea1"
+                                                               rows="3"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary" style="display: block;
+                                                margin: 0 auto;">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 <?php
