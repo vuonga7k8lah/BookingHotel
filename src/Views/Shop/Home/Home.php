@@ -59,13 +59,14 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 pr-1 aside-stretch">
-                    <form action="#" class="booking-form">
+                    <form action="<?=URL::uri('searchHotels')?>" method="POST" class="booking-form">
                         <div class="row">
                             <div class="col-md d-flex py-md-4">
                                 <div class="form-group align-self-stretch d-flex align-items-end">
                                     <div class="wrap bg-white align-self-stretch py-3 px-4">
-                                        <label for="#">Check-in Date</label>
-                                        <input type="text" class="form-control checkin_date"
+                                        <label for="checkInDateSearch">Check-in Date</label>
+                                        <input name="chekInDate" required id="checkInDateSearch" type="text"
+                                               class="form-control checkin_date"
                                                placeholder="Check-in date">
                                     </div>
                                 </div>
@@ -73,8 +74,10 @@ require_once 'src/Views/Shop/navigation.php';
                             <div class="col-md d-flex py-md-4">
                                 <div class="form-group align-self-stretch d-flex align-items-end">
                                     <div class="wrap bg-white align-self-stretch py-3 px-4">
-                                        <label for="#">Check-out Date</label>
-                                        <input type="text" class="form-control checkout_date"
+                                        <label for="checkOutDateSearch">Check-out Date</label>
+                                        <input name="checkOutDate" id="checkOutDateSearch" type="text"
+                                               class="form-control checkout_date"
+                                               required
                                                placeholder="Check-out date">
                                     </div>
                                 </div>
@@ -86,7 +89,7 @@ require_once 'src/Views/Shop/navigation.php';
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="location" id="location" class="form-control">
+                                                <select name="MaDD" id="locationSearch" class="form-control">
                                                     <?php
                                                     $aLocation = LocationModel::getLocations();
                                                     foreach ($aLocation as $location):
@@ -121,8 +124,9 @@ require_once 'src/Views/Shop/navigation.php';
                             </div>
                             <div class="col-md d-flex">
                                 <div class="form-group d-flex align-self-stretch">
-                                    <a href="#"
-                                       class="btn btn-black py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check Availability <small>Best Price Guaranteed!</small></span></a>
+                                    <button id="btn-search-hotels" class="btn btn-black py-5 py-md-3 px-4
+                                    align-self-stretch
+                                    d-block"><span>Check Availability</span></button>
                                 </div>
                             </div>
                         </div>

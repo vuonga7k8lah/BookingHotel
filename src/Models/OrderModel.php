@@ -23,7 +23,15 @@ class OrderModel
 
     public static function checkUserOrderRoom($userID, $roomID): bool
     {
-        $query = DB::Connect()->query("SELECT MaOrder FROM orders WHERE MaUser=".$userID." AND MaPhong= '".$roomID."'")->num_rows;
+        $query = DB::Connect()->query("SELECT MaOrder FROM orders WHERE MaUser=" . $userID . " AND MaPhong= '" .
+            $roomID . "'")->num_rows;
         return !empty($query);
+    }
+
+    public static function getListRoomOrderBetweenDate(string $startDate, string $endDate)
+    {
+        $sql = "SELECT DISTINCT MaPhong FROM orders WHERE DATE(startDate) BETWEEN '{$startDate}' AND '{$endDate}'";
+        $query = DB::Connect()->query($sql)->fetch_all();
+        return is_array($query) ? $query : [];
     }
 }

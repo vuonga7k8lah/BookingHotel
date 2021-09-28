@@ -54,6 +54,8 @@ return [
         //------------------------------------Shop
         //bookRoom
         'bookRoom'       => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@handleBookRoom',
+        //Search
+        'searchHotels'   => 'BookingHotel\Controllers\Shop\Search\SearchController@showViewSearch',
         ////----------------------Admin-----------
         'a.login'        => 'BookingHotel\Controllers\Admin\Login\LoginController@handleLogin',
         //// Hotels

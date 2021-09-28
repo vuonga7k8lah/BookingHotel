@@ -1161,7 +1161,7 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                                     <label for="bookRoom_request" class="form-label" style="font-weight: bold">Yêu Cầu Đặc Biệt</label>
                                                     <div id="emailHelp" class="form-text">Các yêu cầu đặc biệt không đảm bảo sẽ được đáp ứng – tuy nhiên, chỗ nghỉ sẽ cố gắng hết sức để thực hiện. Bạn luôn có thể gửi yêu cầu đặc biệt sau khi hoàn tất đặt phòng của mình!</div>
                                                     <textarea name="request" class="form-control" id="bookRoom_request"
-                                                               rows="3"></textarea>
+                                                              rows="3"></textarea>
                                                 </div>
                                                 <button type="submit" id="btn-submit-bookRoom" class="btn btn-primary"
                                                         style="display: block;

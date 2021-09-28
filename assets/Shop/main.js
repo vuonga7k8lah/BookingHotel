@@ -65,4 +65,38 @@ $(document).ready(function () {
             )
         }
     });
+
+    $('#btn-search-hotelssss').click(function (ev) {
+        ev.preventDefault();
+        let chekInDate = $('#checkInDateSearch').val();
+        let checkOutDate = $('#checkOutDateSearch').val();
+        let location = $('#locationSearch').val();
+        if (chekInDate === '') {
+            alert('check in Date is required');
+        }
+        if (checkOutDate === '') {
+            alert('check out Date is required');
+        }
+        if (chekInDate !== '' && checkOutDate) {
+            $.ajax({
+                    url: GLOBAL_HOTEL.url + 'searchHotels',
+                    type: "POST",
+                    data: {
+                        chekInDate: chekInDate,
+                        checkOutDate: checkOutDate,
+                        location: location
+                    },
+                    success: function (response) {
+                        let oResponse = JSON.parse(response);
+                        if (oResponse.status === 'success') {
+                            $('#bookRoomQRCode').empty().append('<img src="' + oResponse.data.src + '" style="height:' +
+                                ' 400px;width: 400px; display: block;margin: 0 auto">');
+                        } else {
+                            alert(oResponse.message);
+                        }
+                    },
+                }
+            )
+        }
+    });
 })
