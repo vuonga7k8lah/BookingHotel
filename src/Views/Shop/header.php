@@ -31,10 +31,11 @@ use BookingHotel\Core\URL;
 
     <link rel="stylesheet" href="./assets/Shop/css/flaticon.css">
     <link rel="stylesheet" href="./assets/Shop/css/icomoon.css">
+    <link rel="stylesheet" href="./assets/Shop/icofont/icofont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/Shop/css/style.css">
     <link rel="stylesheet" href="./assets/Shop/css/comment.css">
-    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css"
-          integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script type="text/javascript">window.$crisp = [];
         window.CRISP_WEBSITE_ID = "54e61e15-d653-477c-ba55-d88862973a0c";
         (function () {

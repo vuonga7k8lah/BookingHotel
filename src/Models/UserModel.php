@@ -128,9 +128,13 @@ class UserModel
 
     public static function handleLogin($aData)
     {
-        $sql = "SELECT ID FROM users WHERE userName='" .
-            DB::Connect()->real_escape_string($aData['username']) . "' AND password='"
-            . DB::Connect()->real_escape_string(md5($aData['password'])) . "'";
+        if (isset($aData['username'])){
+            $where="username='" . DB::Connect()->real_escape_string($aData['username']) . "' AND password='" .
+                DB::Connect()->real_escape_string(md5($aData['password'])) . "'";
+        }else{
+            $where="email='" . DB::Connect()->real_escape_string($aData['email']) . "' AND password='" . DB::Connect()->real_escape_string(md5($aData['password'])) . "'";
+        }
+        $sql = "SELECT ID FROM users WHERE ".$where;
         $status = DB::Connect()->query($sql);
         return (!empty($status->num_rows)) ? ($status->fetch_assoc())['ID'] : false;
     }

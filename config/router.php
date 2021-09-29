@@ -7,6 +7,10 @@ return [
         // Display
         'location/'         => 'BookingHotel\Controllers\Shop\Display\DisplayController@getListHotel',
         'detailsRoom/'      => 'BookingHotel\Controllers\Shop\Display\DisplayController@getDetailsRoom',
+        //Login
+        'login'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewLogin',
+        'register'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewRegister',
+        'logout'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogout',
         ////----------------------API-----------
         //User
         'users'             => 'BookingHotel\Controllers\API\Users\UsersController@getUsers',
@@ -56,6 +60,11 @@ return [
         'bookRoom'       => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@handleBookRoom',
         //Search
         'searchHotels'   => 'BookingHotel\Controllers\Shop\Search\SearchController@showViewSearch',
+        //comment
+        'commentShop'    => 'BookingHotel\Controllers\Shop\Comment\CommentController@handleComment',
+        //register-login
+        'register'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleRegister',
+        'loginShop'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogin',
         ////----------------------Admin-----------
         'a.login'        => 'BookingHotel\Controllers\Admin\Login\LoginController@handleLogin',
         //// Hotels
