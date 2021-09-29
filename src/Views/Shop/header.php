@@ -35,6 +35,7 @@ use BookingHotel\Core\URL;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/Shop/css/style.css">
     <link rel="stylesheet" href="./assets/Shop/css/comment.css">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script type="text/javascript">window.$crisp = [];
         window.CRISP_WEBSITE_ID = "54e61e15-d653-477c-ba55-d88862973a0c";
         (function () {
@@ -49,6 +50,5 @@ use BookingHotel\Core\URL;
             "url": "<?=URL::uri();?>"
         }
     </script>
-    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 </head>
 <body>
