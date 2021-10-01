@@ -68,6 +68,7 @@ class LoginController
                         $aUser = UserModel::getUserWithID($ID);
                         Session::set('isUserLogin', true);
                         Session::set('userID', $ID);
+                        Session::set('email', $aUser['email']);
                         Session::set('hoTen', $aUser['hoTen']);
                         URL::redirect('');
                     } else {

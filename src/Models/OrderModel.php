@@ -23,9 +23,15 @@ class OrderModel
 
     public static function checkUserOrderRoom($userID, $roomID): bool
     {
-        $query = DB::Connect()->query("SELECT MaOrder FROM orders WHERE MaUser=" . $userID . " AND MaPhong= '" .
-            $roomID . "'")->num_rows;
+        $query = self::getOrderIDWithUserIDAndRoomID($userID, $roomID);
         return !empty($query);
+    }
+
+    public static function getOrderIDWithUserIDAndRoomID($userID, $roomID)
+    {
+        $query = DB::Connect()->query("SELECT MaOrder FROM orders WHERE MaUser=" . $userID . " AND MaPhong= '" .
+            $roomID . "'")->fetch_assoc();
+        return !empty($query) ? $query['MaOrder'] : 0;
     }
 
     public static function getListRoomOrderBetweenDate(string $startDate, string $endDate)

@@ -58,17 +58,8 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         </button>
                     </div>
                     <div class="sidebar-box ftco-animate">
-                        <div class="categories">
-                            <h3>Categories</h3>
-                            <li><a href="#">Properties <span>(12)</span></a></li>
-                            <li><a href="#">Home <span>(22)</span></a></li>
-                            <li><a href="#">House <span>(37)</span></a></li>
-                            <li><a href="#">Villa <span>(42)</span></a></li>
-                            <li><a href="#">Apartment <span>(14)</span></a></li>
-                            <li><a href="#">Condominium <span>(140)</span></a></li>
-                        </div>
+                        <div id="map" style="height: 400px"></div>
                     </div>
-
                     <div class="sidebar-box ftco-animate">
                         <h3>Recent Blog</h3>
                         <div class="block-21 mb-4 d-flex">
@@ -201,13 +192,16 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                                 <div class="mb-3">
                                                     <label for="bookRoom_email" class="form-label" style="font-weight: bold">Email address</label>
                                                     <input type="email" name="email" class="form-control"
+                                                           value="<?=isset($_SESSION['isUserLogin'])?$_SESSION['email']:''?>"
                                                            required
                                                            id="bookRoom_email"
                                                            aria-describedby="emailHelp">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="bookRoom_fullName" class="form-label" style="font-weight: bold">Họ Và Tên</label>
-                                                    <input type="text" required name="fullName" class="form-control"
+                                                    <input type="text" required name="fullName"
+                                                       value=" <?=isset($_SESSION['isUserLogin'])?$_SESSION['hoTen']:''?>"
+                                                           class="form-control"
                                                            id="bookRoom_fullName">
                                                 </div>
                                                 <div class="mb-3">

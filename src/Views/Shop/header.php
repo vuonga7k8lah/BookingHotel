@@ -50,5 +50,6 @@ use BookingHotel\Core\URL;
             "url": "<?=URL::uri();?>"
         }
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>

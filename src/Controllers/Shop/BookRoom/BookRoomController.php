@@ -4,6 +4,7 @@ namespace BookingHotel\Controllers\Shop\BookRoom;
 
 use BookingHotel\Core\TrainJWT;
 use BookingHotel\Core\TrainQRCode;
+use BookingHotel\Core\URL;
 use BookingHotel\Models\OrderModel;
 use BookingHotel\Models\UserModel;
 use Exception;
@@ -17,6 +18,8 @@ class BookRoomController
         try {
             $aData = $_POST;
             if (!UserModel::isEmailExist($aData['email'])) {
+                URL::redirect('login');
+                die();
                 $aDataInsert = [
                     'username' => $aData['email'],
                     'password' => md5($aData['email']),

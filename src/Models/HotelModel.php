@@ -27,6 +27,12 @@ class HotelModel
         return DB::Connect()->query("SELECT * FROM hotels WHERE MaDD='.$locationID.'")->fetch_all();
     }
 
+    public static function getCountHotelLocation($MaDD)
+    {
+        $query = DB::Connect()->query("SELECT count(MaKS) as count FROM hotels WHERE MaDD='{$MaDD}'")->fetch_assoc();
+        return !empty($query) ? $query['count'] : 0;
+    }
+
     public static function getHotelBySearchName($s)
     {
         return DB::Connect()->query("SELECT * FROM hotels WHERE TenKS like '%" . $s . "%'")->fetch_all();

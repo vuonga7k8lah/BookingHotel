@@ -11,7 +11,12 @@ return [
         'login'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewLogin',
         'register'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewRegister',
         'logout'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogout',
+
+
+
         ////----------------------API-----------
+
+
         //User
         'users'             => 'BookingHotel\Controllers\API\Users\UsersController@getUsers',
         'users/'            => 'BookingHotel\Controllers\API\Users\UsersController@getUser',
@@ -23,7 +28,12 @@ return [
         'locations/'        => 'BookingHotel\Controllers\API\Location\LocationController@getLocation',
         //Search
         'search-hotels/'    => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotels',
+        // Display
+
+
         ////----------------------Admin-----------
+
+
         //// Dashboard
         'a.dashboard'       => 'BookingHotel\Controllers\Admin\Dashboard\DashboardController@getView',
         //// login
@@ -46,6 +56,7 @@ return [
         'a.deleteRoom/'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleDelete',
         'a.listRoom'        => 'BookingHotel\Controllers\Admin\Room\RoomController@getListView',
     ],
+
     'post'   => [
         //------------------------------------API
         //User
@@ -78,7 +89,9 @@ return [
         'a.editRoom'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleEdit',
         //// upload
         'a.upload'       => 'BookingHotel\Controllers\Admin\Upload\UploadController@handleUpload',
-    ],
+    ]
+
+    ,
     'put'    => [
         //API
         //User

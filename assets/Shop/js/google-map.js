@@ -1,62 +1,51 @@
-
-var google;
-
-function init() {
-    // Basic options for a simple Google Map
-    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-    var myLatlng = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
-    // 39.399872
-    // -8.224454
-    
-    var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 7,
-
-        // The latitude and longitude to center the map (always required)
-        center: myLatlng,
-
-        // How you would like to style the map. 
-        scrollwheel: false,
-        styles: [
-            {
-                "featureType": "administrative.country",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
-                    },
-                    {
-                        "hue": "#ff0000"
-                    }
-                ]
-            }
-        ]
-    };
-
-    
-
-    // Get the HTML DOM element that will contain your map 
-    // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map');
-
-    // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
-    
-    var addresses = ['New York'];
-
-    for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-            var p = data.results[0].geometry.location
-            var latlng = new google.maps.LatLng(p.lat, p.lng);
-            new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: 'images/loc.png'
-            });
-
-        });
-    }
-    
+function initMap() {
+    // Map option
+    let options = {
+    center: {lat: 38.3460 , lng:-0.4907 },
+    zoom: 8
 }
-google.maps.event.addDomListener(window, 'load', init);
+
+    //New Map
+    let map = new google.maps.Map(document.getElementById("map"),options)
+    //listen for click on map location
+
+    let MarkerArray = [ {location:{lat: 37.9922, lng: -1.1307},
+    imageIcon: "https://img.icons8.com/nolan/2x/marker.png",
+    content: `<h2>Murcia City</h2>`},
+    ]
+
+    // loop through marker
+    for (let i = 0; i < MarkerArray.length; i++){
+    addMarker(MarkerArray[i]);
+
+}
+
+    // Add Marker
+
+    function addMarker(property){
+
+    const marker = new google.maps.Marker({
+    position:property.location,
+    map:map,
+    //icon: property.imageIcon
+});
+
+    // Check for custom Icon
+
+    if(property.imageIcon){
+    // set image icon
+    marker.setIcon(property.imageIcon)
+}
+
+    if(property.content){
+
+    const detailWindow = new google.maps.InfoWindow({
+    content: property.content
+});
+
+    marker.addListener("mouseover", () =>{
+    detailWindow.open(map, marker);
+})
+}
+}
+}
