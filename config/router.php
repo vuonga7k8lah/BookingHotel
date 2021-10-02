@@ -1,6 +1,6 @@
 <?php
 return [
-    'get'    => [
+    'get' => [
         ////-------------------Shop----------------------
         // Home
         ''                  => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
@@ -8,10 +8,9 @@ return [
         'location/'         => 'BookingHotel\Controllers\Shop\Display\DisplayController@getListHotel',
         'detailsRoom/'      => 'BookingHotel\Controllers\Shop\Display\DisplayController@getDetailsRoom',
         //Login
-        'login'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewLogin',
-        'register'         => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewRegister',
-        'logout'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogout',
-
+        'login'             => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewLogin',
+        'register'          => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewRegister',
+        'logout'            => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogout',
 
 
         ////----------------------API-----------
@@ -28,7 +27,8 @@ return [
         'locations/'        => 'BookingHotel\Controllers\API\Location\LocationController@getLocation',
         //Search
         'search-hotels/'    => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotels',
-        // Display
+        // Rating
+        'rating-rooms/'    => 'BookingHotel\Controllers\API\Rating\RatingController@getListRatingRoom',
 
 
         ////----------------------Admin-----------
@@ -66,6 +66,12 @@ return [
         'hotels'         => 'BookingHotel\Controllers\API\Hotels\HotelsController@createHotel',
         //Search
         'search-hotels'  => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotel',
+        //BookRoom
+        'bookRooms'      => 'BookingHotel\Controllers\API\BookRoom\BookRoomController@handleBookRoom',
+
+        //Rating
+        'isUserBookRoom' => 'BookingHotel\Controllers\API\Rating\RatingController@checkUserOrderRoom',
+        'rating-rooms'    => 'BookingHotel\Controllers\API\Rating\RatingController@createRatingRoom',
         //------------------------------------Shop
         //bookRoom
         'bookRoom'       => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@handleBookRoom',
@@ -74,8 +80,8 @@ return [
         //comment
         'commentShop'    => 'BookingHotel\Controllers\Shop\Comment\CommentController@handleComment',
         //register-login
-        'register'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleRegister',
-        'loginShop'         => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogin',
+        'register'       => 'BookingHotel\Controllers\Shop\Login\LoginController@handleRegister',
+        'loginShop'      => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogin',
         ////----------------------Admin-----------
         'a.login'        => 'BookingHotel\Controllers\Admin\Login\LoginController@handleLogin',
         //// Hotels

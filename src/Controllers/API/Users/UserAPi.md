@@ -21,11 +21,9 @@ export interface Data {
     ID: string
     hoTen: string
     username: string
-    ngaySinh: string
-    CMT: string
-    diaChi: string
     email: string
     role: string
+    urlQRcode:string
     createDate: string
 }
 ````
@@ -52,11 +50,9 @@ export interface Data {
     ID: string
     hoTen: string
     username: string
-    ngaySinh: string
-    CMT: string
-    diaChi: string
     email: string
     role: string
+    urlQRcode:string
     createDate: string
 }
 ````

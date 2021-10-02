@@ -33,7 +33,8 @@ class UsersController
                 'username'   => $oUSer[2],
                 'email'      => $oUSer[7],
                 'role'       => $oUSer[5],
-                'createDate' => $oUSer[9],
+                'qrcode'  => $oUSer[9],
+                'createDate' => $oUSer[10],
             ];
         }
         echo HandleResponse::success('List user', $aUser);
