@@ -90,6 +90,18 @@ use BookingHotel\Core\URL;
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
+                <li>
+                    <a href=""><i class="fa fa-book fa-fw"></i>Blog<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?=URL::uri('a.listBlog')?>">List Blog</a>
+                        </li>
+                        <li>
+                            <a href="<?=URL::uri('a.addBlog')?>">Add Blog</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

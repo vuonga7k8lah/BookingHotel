@@ -240,7 +240,7 @@ require_once 'src/Views/Shop/navigation.php';
         </div>
     </section>
 
-    <section class="ftco-section bg-light ftco-room">
+    <section class="ftco-section bg-light ftco-room" id="room">
         <div class="container-fluid px-0">
             <div class="row no-gutters justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
@@ -423,62 +423,31 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Read Blog</span>
                     <h2>Recent Blog</h2>
                 </div>
             </div>
             <div class="row d-flex">
+                <?php $aBlogs= \BookingHotel\Models\BlogModel::getBlogs();
+                foreach ($aBlogs as $item):
+                    $src=(json_decode($item[3],true))[0]
+                ?>
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                           style="background-image: url('images/image_1.jpg');">
+                        <a href="<?=URL::uri('detailBlog/'.$item[0])?>" class="block-20"
+                           style="background-image: url(<?=$src?>);width: 350px;height: 250px">
                         </a>
                         <div class="text mt-3 text-center">
                             <div class="meta mb-2">
-                                <div><a href="#">July 03, 2019</a></div>
+                                <div><a href="<?=URL::uri('detailBlog/'.$item[0])?>"><?=date('d M Y',strtotime($item[5]))?></a></div>
                                 <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span><?=$item[4]?></a></div>
                             </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                    blind texts</a></h3>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
+                            <h3 class="heading"><a href="<?=URL::uri('detailBlog/'.$item[0])?>"><?=$item[1]?></a></h3>
+                            <p><a href="<?=URL::uri('detailBlog/'.$item[0])?>" class="btn-custom">Read more</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                           style="background-image: url('images/image_2.jpg');">
-                        </a>
-                        <div class="text mt-3 text-center">
-                            <div class="meta mb-2">
-                                <div><a href="#">July 03, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                    blind texts</a></h3>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                           style="background-image: url('images/image_3.jpg');">
-                        </a>
-                        <div class="text mt-3 text-center">
-                            <div class="meta mb-2">
-                                <div><a href="#">July 03, 2019</a></div>
-                                <div><a href="#">Admin</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                            </div>
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                    blind texts</a></h3>
-                            <p><a href="#" class="btn-custom">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
     </section>

@@ -6,6 +6,7 @@ use BookingHotel\Core\HandleResponse;
 use BookingHotel\Core\TrainJWT;
 use BookingHotel\Models\HotelModel;
 use BookingHotel\Models\LocationModel;
+use BookingHotel\Models\RoomModel;
 use BookingHotel\Shares\TrainGetTokenHeader;
 use Exception;
 
@@ -23,14 +24,27 @@ class HotelsController
     public function getHotels()
     {
         $aData = [];
+        $aRooms = [];
         $aHotel = HotelModel::getHotels();
         foreach ($aHotel as $aItem) {
             $aDiaDiem = LocationModel::getLocation($aItem[1]);
             $aDiaDiem['image'] = json_decode(LocationModel::getLocation($aItem[1])['image'], true);
+            $aRawRooms = RoomModel::getRoomsByMaKS($aItem[1]);
+            foreach ($aRawRooms as $aItemRoom) {
+                $aRooms[] = [
+                    'MaPhong'    => $aItemRoom[0],
+                    'tenPhong'   => $aItemRoom[2],
+                    'content'    => $aItemRoom[3],
+                    'gia'        => $aItemRoom[4],
+                    'image'      => json_decode($aItemRoom[5], true),
+                    'createDate' => $aItemRoom[6],
+                ];
+            }
             $aData[] = [
                 'MaKS'       => $aItem[1],
                 'tenKS'      => $aItem[2],
-                'diaDiem'    => $aDiaDiem,
+                'location'   => $aDiaDiem,
+                'rooms'      => $aRooms,
                 'content'    => $aItem[3],
                 'diaChi'     => $aItem[4],
                 'tenMien'    => $aItem[5],

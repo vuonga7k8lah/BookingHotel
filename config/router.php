@@ -11,7 +11,10 @@ return [
         'login'             => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewLogin',
         'register'          => 'BookingHotel\Controllers\Shop\Login\LoginController@getViewRegister',
         'logout'            => 'BookingHotel\Controllers\Shop\Login\LoginController@handleLogout',
-
+        //profile user
+        'profile'           => 'BookingHotel\Controllers\Shop\Profile\ProfileController@getView',
+        //detail Blog
+        'detailBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getViewDetail',
 
         ////----------------------API-----------
 
@@ -28,7 +31,7 @@ return [
         //Search
         'search-hotels/'    => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotels',
         // Rating
-        'rating-rooms/'    => 'BookingHotel\Controllers\API\Rating\RatingController@getListRatingRoom',
+        'rating-rooms/'     => 'BookingHotel\Controllers\API\Rating\RatingController@getListRatingRoom',
 
 
         ////----------------------Admin-----------
@@ -55,6 +58,12 @@ return [
         'a.editRoom/'       => 'BookingHotel\Controllers\Admin\Room\RoomController@getEditView',
         'a.deleteRoom/'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleDelete',
         'a.listRoom'        => 'BookingHotel\Controllers\Admin\Room\RoomController@getListView',
+        //// Blogs
+        'a.addBlog'         => 'BookingHotel\Controllers\Admin\Blog\BlogController@getAddView',
+        'a.editBlog/'       => 'BookingHotel\Controllers\Admin\Blog\BlogController@getEditView',
+        'a.deleteBlog/'     => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleDelete',
+        'a.listBlog'        => 'BookingHotel\Controllers\Admin\Blog\BlogController@getListView',
+
     ],
 
     'post'   => [
@@ -71,7 +80,7 @@ return [
 
         //Rating
         'isUserBookRoom' => 'BookingHotel\Controllers\API\Rating\RatingController@checkUserOrderRoom',
-        'rating-rooms'    => 'BookingHotel\Controllers\API\Rating\RatingController@createRatingRoom',
+        'rating-rooms'   => 'BookingHotel\Controllers\API\Rating\RatingController@createRatingRoom',
         //------------------------------------Shop
         //bookRoom
         'bookRoom'       => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@handleBookRoom',
@@ -93,6 +102,9 @@ return [
         //// Rooms
         'a.addRoom'      => 'BookingHotel\Controllers\Admin\Room\RoomController@handleAdd',
         'a.editRoom'     => 'BookingHotel\Controllers\Admin\Room\RoomController@handleEdit',
+        //// Blog
+        'a.addBlog'      => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleAdd',
+        'a.editBlog'     => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleEdit',
         //// upload
         'a.upload'       => 'BookingHotel\Controllers\Admin\Upload\UploadController@handleUpload',
     ]

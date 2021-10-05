@@ -11,10 +11,9 @@ use BookingHotel\Core\URL;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <base href="<?= URL::uri(); ?>">
     <link rel="shortcut icon" type="image/png" href="./assets/IMG/hotel.jpeg"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/Shop/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="./assets/Shop/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="./assets/Shop/css/animate.css">
 
     <link rel="stylesheet" href="./assets/Shop/css/owl.carousel.min.css">
@@ -27,7 +26,13 @@ use BookingHotel\Core\URL;
 
     <link rel="stylesheet" href="./assets/Shop/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="./assets/Shop/css/jquery.timepicker.css">
-
+    <?php
+    $uri=\BookingHotel\Core\Request::uri();
+    $aUri=explode('/',$uri);
+    if ($aUri[0]=='profile'){
+        echo '<link rel="stylesheet" href="./assets/Shop/profile.css">';
+    }
+    ?>
 
     <link rel="stylesheet" href="./assets/Shop/css/flaticon.css">
     <link rel="stylesheet" href="./assets/Shop/css/icomoon.css">
