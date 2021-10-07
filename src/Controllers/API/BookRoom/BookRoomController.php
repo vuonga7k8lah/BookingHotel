@@ -47,6 +47,7 @@ class BookRoomController
                                 'tenPhong'  => $aData['tenPhong'],
                                 'request'   => $aData['request']
                             ]);
+
                             if (OrderModel::checkUserOrderRoom($userID, $aData['MaPhong'])) {
                                 $QRCode = UserModel::getQRCode($userID);
                             } else {
