@@ -1,6 +1,7 @@
 <?php
 
 use BookingHotel\Core\URL;
+use BookingHotel\Models\BlogModel;
 
 
 /**
@@ -99,6 +100,7 @@ function uploadImageMany($aData)
     }
     return json_encode($NameIMG);
 }
+
 function the_excerpt($text, $string = 400)
 {
     $sanitized = htmlentities($text, ENT_COMPAT, 'UTF-8');
@@ -115,10 +117,17 @@ function the_excerpt($text, $string = 400)
 function LoadAnh($data)
 {
     $adata = json_decode($data, true);
-        foreach ($adata as $val) {
-            ?>
-            <a href="<?= $val ?>"><img src="<?= $val ?>" alt=""
-                                                       style="width: 50px;height: 50px;float: left"></a>
-            <?php
-        }
+    foreach ($adata as $val) {
+        ?>
+        <a href="<?= $val ?>"><img src="<?= $val ?>" alt=""
+                                   style="width: 50px;height: 50px;float: left"></a>
+        <?php
+    }
+}
+
+function updateCountView($blogID): bool
+{
+    $countView = (int)BlogModel::getCountViewByBlogID($blogID);
+    BlogModel::update($blogID, ['countView' => ($countView + 1)]);
+    return true;
 }

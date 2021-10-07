@@ -65,74 +65,24 @@ $aUser=\BookingHotel\Models\UserModel::getUserWithID($_SESSION['userID']);
                         </div>
 
                         <div class="row gutters-sm">
+                            <?php
+                            $aOrder=\BookingHotel\Models\OrderModel::getListOrderByUserID($_SESSION['userID']);
+                           foreach ($aOrder as $aItem):
+                            ?>
                             <div class="col-sm-6 mb-3">
-                                <div class="card h-100">
+                                <div class="card">
+                                    <img class="card-img-top" src="<?=$aItem['5']?>" alt="<?=$aItem[1]?>">
                                     <div class="card-body">
-                                        <h6 class="d-flex align-items-center mb-3"><i
-                                                    class="material-icons text-info mr-2">assignment</i>Project
-                                            Status</h6>
-                                        <small>Web Design</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
-                                                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Website Markup</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
-                                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>One Page</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
-                                                 aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Mobile Template</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
-                                                 aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Backend API</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
-                                                 aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        <h5 class="card-title">Tên Khách Sạn:<?=$aItem[0]?></h5>
+                                        <h6 class="card-title">Check Date In:<?=$aItem[3]?></h6>
+                                        <h6 class="card-title">Check Date Out:<?=$aItem[4]?></h6>
+                                        <p class="card-text">Tên Phòng:<?=$aItem[1]?></p>
+                                        <p href="#" class="btn btn-primary" style="display: block;margin: 0 auto">Giá:
+                                            <?=$aItem[2]?></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mb-3">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h6 class="d-flex align-items-center mb-3"><i
-                                                    class="material-icons text-info mr-2">assignment</i>Project
-                                            Status</h6>
-                                        <small>Web Design</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
-                                                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Website Markup</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
-                                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>One Page</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
-                                                 aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Mobile Template</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
-                                                 aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <small>Backend API</small>
-                                        <div class="progress mb-3" style="height: 5px">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
-                                                 aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           <?php endforeach;?>
                         </div>
                     </div>
                 </div>

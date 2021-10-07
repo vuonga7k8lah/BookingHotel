@@ -29,6 +29,12 @@ class BlogModel
         return DB::Connect()->query("SELECT * FROM blogs")->num_rows;
     }
 
+    public static function getCountViewByBlogID($blogID): int
+    {
+        $query = DB::Connect()->query("SELECT countView FROM blogs WHERE id={$blogID}")->fetch_assoc();
+        return !empty($query['countView']) ?$query['countView']: 0;
+    }
+
     public static function getBlog($blogID): ?array
     {
         return DB::Connect()->query("SELECT * FROM blogs WHERE id={$blogID}")->fetch_assoc();
@@ -46,7 +52,9 @@ class BlogModel
         if ($aData['images'] ?? '') {
             $query [] = " image = '" . json_encode($aData['images']) . "'";
         }
-
+        if ($aData['countView'] ?? '') {
+            $query [] = " countView = " .$aData['countView'];
+        }
         return DB::Connect()->query("UPDATE `blogs` SET " . implode(',', $query) .
             ",`createDate`=null WHERE id='" . $id . "'");
     }

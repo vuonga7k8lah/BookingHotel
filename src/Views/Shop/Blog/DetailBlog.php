@@ -7,6 +7,7 @@ use BookingHotel\Models\BlogModel;
 require_once 'src/Views/Shop/header.php';
 require_once 'src/Views/Shop/navigation.php';
 $idBlog = Request::getIDOnURL();
+updateCountView($idBlog);
 $aBlog = BlogModel::getBlog($idBlog);
 $srcBlog = json_decode($aBlog['image'], true)[0]
 ?>
@@ -29,7 +30,13 @@ $srcBlog = json_decode($aBlog['image'], true)[0]
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        <h2 style="display: block;font-weight: bold;margin: 0 auto"><?= $aBlog['title'] ?></h2>
+                        <div class="col-lg-12">
+                            <h2 style="display: block;font-weight: bold;margin: 0 auto"><?= $aBlog['title'] ?></h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 style="margin-right:20px ">Viewed: <?= (int)$aBlog['countView'] ?></h5>
+                            <h5><?= $aBlog['createDate'] ?></h5>
+                        </div>
                         <div class="col-md-12 room-single mt-4 mb-5 ftco-animate" style="overflow: scroll">
                             <?= $aBlog['content'] ?>
                         </div>
@@ -42,20 +49,27 @@ $srcBlog = json_decode($aBlog['image'], true)[0]
                     </div>
                     <div class="sidebar-box ftco-animate">
                         <h3>Recent Blog</h3>
-                        <?php $aBlogs = BlogModel::getBlogsLimit(1,3);
+                        <?php $aBlogs = BlogModel::getBlogsLimit(1, 3);
                         foreach ($aBlogs as $item):
                             $src = (json_decode($item[3], true))[0] ?>
                             <div class="block-21 mb-4 d-flex">
-                                    <a class="<?= URL::uri('detailBlog/' . $item[0]) ?>" style="background-image: url(<?=$src?>); width: 80px;height: 80px" ></a>
-                                    <div class="text">
-                                        <h3 class="heading"><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><?= $item[1] ?></a></h3>
-                                        <div class="meta">
-                                            <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-calendar"></span><?= date('M m, Y', strtotime($item[5])) ?></a></div>
-                                            <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-person"></span> Admin</a></div>
-                                            <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-chat"></span><?= $item[4] ?></span></a>
-                                            </div>
+                                <a class="<?= URL::uri('detailBlog/' . $item[0]) ?>"
+                                   style="background-image: url(<?= $src ?>); width: 80px;height: 80px"></a>
+                                <div class="text">
+                                    <h3 class="heading"><a
+                                                href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><?= $item[1] ?></a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span
+                                                        class="icon-calendar"></span><?= date('M m, Y',
+                                                    strtotime($item[5])) ?></a></div>
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span
+                                                        class="icon-person"></span> Admin</a></div>
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span
+                                                        class="icon-chat"></span><?= $item[4] ?></span></a>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -78,4 +92,5 @@ $srcBlog = json_decode($aBlog['image'], true)[0]
         </div>
     </section>
 <?php
+
 require_once 'src/Views/Shop/footer.php';
