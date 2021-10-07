@@ -101,14 +101,10 @@ https://website.com/BookingHotel/users
 
 key | type | value
 --- | --- | ---
-ID | string | id Của user
-token | string | code xác thực bắn trên header
 username | string | tên tài khoản
-role | string | quyền
 email | string | email
 hoTen | string | ten
-diaChi | string | địa chỉ
-ngaySinh | string | Ngày Sinh
+SDT | number | so dien thoai
 password | string | password
 
 

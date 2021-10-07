@@ -42,7 +42,7 @@ $srcBlog = json_decode($aBlog['image'], true)[0]
                     </div>
                     <div class="sidebar-box ftco-animate">
                         <h3>Recent Blog</h3>
-                        <?php $aBlogs = BlogModel::getBlogs();
+                        <?php $aBlogs = BlogModel::getBlogsLimit(1,3);
                         foreach ($aBlogs as $item):
                             $src = (json_decode($item[3], true))[0] ?>
                             <div class="block-21 mb-4 d-flex">

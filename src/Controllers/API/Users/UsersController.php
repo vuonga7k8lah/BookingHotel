@@ -77,14 +77,12 @@ class UsersController
     public function createUser()
     {
         $aData = $_POST;
-        $aData['token'] = $this->getTokenHeaders();
         try {
-            if (checkDataIsset($this->aDefineCreateUser, $aData)) {
+            if (checkDataIsset(['hoTen', 'username','email', 'password', 'SDT'], $aData)) {
                 if (checkDataEmpty($aData)) {
                     $aData['password'] = md5($_POST['password']);
                     $aData['SDT'] = (int)$_POST['SDT'];
                     if (!UserModel::isEmailExist($aData['email'])) {
-                        if ($this->verifyToken($aData['token'])) {
                             $userID = UserModel::insert($aData);
                             if ($userID ?? '') {
                                 $token = $this->encodeJWT([
@@ -98,9 +96,6 @@ class UsersController
                             } else {
                                 throw new Exception('The account not create successfully', 401);
                             }
-                        } else {
-                            throw new Exception('User not permission access', 401);
-                        }
                     } else {
                         throw new Exception('Sorry,the account is exist', 401);
                     }

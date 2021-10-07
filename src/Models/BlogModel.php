@@ -24,6 +24,11 @@ class BlogModel
         return DB::Connect()->query("SELECT * FROM blogs")->fetch_all();
     }
 
+    public static function getCountBlogs(): int
+    {
+        return DB::Connect()->query("SELECT * FROM blogs")->num_rows;
+    }
+
     public static function getBlog($blogID): ?array
     {
         return DB::Connect()->query("SELECT * FROM blogs WHERE id={$blogID}")->fetch_assoc();
@@ -44,5 +49,11 @@ class BlogModel
 
         return DB::Connect()->query("UPDATE `blogs` SET " . implode(',', $query) .
             ",`createDate`=null WHERE id='" . $id . "'");
+    }
+
+    public static function getBlogsLimit(int $page = 1, int $limit = 6)
+    {
+        $start = ($page - 1) * $limit;
+        return DB::Connect()->query("SELECT * FROM blogs LIMIT {$start},{$limit} ")->fetch_all();
     }
 }

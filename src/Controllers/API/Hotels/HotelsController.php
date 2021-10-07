@@ -29,7 +29,7 @@ class HotelsController
         foreach ($aHotel as $aItem) {
             $aDiaDiem = LocationModel::getLocation($aItem[1]);
             $aDiaDiem['image'] = json_decode(LocationModel::getLocation($aItem[1])['image'], true);
-            $aRawRooms = RoomModel::getRoomsByMaKS($aItem[1]);
+            $aRawRooms = RoomModel::getRoomsByMaKS($aItem[0]);
             foreach ($aRawRooms as $aItemRoom) {
                 $aRooms[] = [
                     'MaPhong'    => $aItemRoom[0],
@@ -41,7 +41,7 @@ class HotelsController
                 ];
             }
             $aData[] = [
-                'MaKS'       => $aItem[1],
+                'MaKS'       => $aItem[0],
                 'tenKS'      => $aItem[2],
                 'location'   => $aDiaDiem,
                 'rooms'      => $aRooms,

@@ -15,6 +15,7 @@ return [
         'profile'           => 'BookingHotel\Controllers\Shop\Profile\ProfileController@getView',
         //detail Blog
         'detailBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getViewDetail',
+        'listBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getListBlog',
 
         ////----------------------API-----------
 

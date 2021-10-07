@@ -8,4 +8,9 @@ class BlogController
     {
         include './src/Views/Shop/Blog/DetailBlog.php';
     }
+
+    public function getListBlog()
+    {
+        include './src/Views/Shop/Blog/ListBlog.php';
+    }
 }

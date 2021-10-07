@@ -427,7 +427,7 @@ require_once 'src/Views/Shop/navigation.php';
                 </div>
             </div>
             <div class="row d-flex">
-                <?php $aBlogs= \BookingHotel\Models\BlogModel::getBlogs();
+                <?php $aBlogs= \BookingHotel\Models\BlogModel::getBlogsLimit(1,3);
                 foreach ($aBlogs as $item):
                     $src=(json_decode($item[3],true))[0]
                 ?>

@@ -1,6 +1,8 @@
 <?php
 
 use BookingHotel\Core\Request;
+use BookingHotel\Core\URL;
+use BookingHotel\Models\BlogModel;
 use BookingHotel\Models\HotelModel;
 use BookingHotel\Models\RoomModel;
 
@@ -54,50 +56,32 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                     <div class="sidebar-box">
                         <button type="button" id="btn-booking_<?= $aRoom['MaPhong'] ?>" class="btn btn-lg btn-primary"
                                 style="display: block;margin:0
-                        auto">Đặt Ngay
-                        </button>
+                        auto">Đặt Ngay`</button>
                     </div>
                     <div class="sidebar-box ftco-animate">
-                        <div id="map" style="height: 400px"></div>
+                        <section>
+                            <div id='map_canvas' style="height: 400px"></div>
+                            <div id="current">Nothing yet...</div>
+                        </section>
                     </div>
                     <div class="sidebar-box ftco-animate">
                         <h3>Recent Blog</h3>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                        blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        <?php $aBlogs = BlogModel::getBlogsLimit(1,3);
+                        foreach ($aBlogs as $item):
+                            $src = (json_decode($item[3], true))[0] ?>
+                            <div class="block-21 mb-4 d-flex">
+                                <a class="<?= URL::uri('detailBlog/' . $item[0]) ?>" style="background-image: url(<?=$src?>); width: 80px;height: 80px" ></a>
+                                <div class="text">
+                                    <h3 class="heading"><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><?= $item[1] ?></a></h3>
+                                    <div class="meta">
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-calendar"></span><?= date('M m, Y', strtotime($item[5])) ?></a></div>
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-person"></span> Admin</a></div>
+                                        <div><a href="<?= URL::uri('detailBlog/' . $item[0]) ?>"><span class="icon-chat"></span><?= $item[4] ?></span></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                        blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                        blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> July 04, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <div class="sidebar-box ftco-animate">
