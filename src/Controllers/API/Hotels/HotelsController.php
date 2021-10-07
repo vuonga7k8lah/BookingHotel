@@ -24,12 +24,12 @@ class HotelsController
     public function getHotels()
     {
         $aData = [];
-        $aRooms = [];
         $aHotel = HotelModel::getHotels();
         foreach ($aHotel as $aItem) {
             $aDiaDiem = LocationModel::getLocation($aItem[1]);
             $aDiaDiem['image'] = json_decode(LocationModel::getLocation($aItem[1])['image'], true);
             $aRawRooms = RoomModel::getRoomsByMaKS($aItem[0]);
+            $aRooms=[];
             foreach ($aRawRooms as $aItemRoom) {
                 $aRooms[] = [
                     'MaPhong'    => $aItemRoom[0],
