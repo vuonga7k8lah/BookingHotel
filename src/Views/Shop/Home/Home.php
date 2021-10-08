@@ -369,7 +369,7 @@ require_once 'src/Views/Shop/navigation.php';
                                 <div class="item">
                                     <div class="testimony-wrap py-4 pb-5">
                                         <div class="user-img mb-4"
-                                             style="background-image: url('assets/Shop/images/person_1.jpg')">
+                                             style="background-image: url(assets/Shop/images/person_1.jpg)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>

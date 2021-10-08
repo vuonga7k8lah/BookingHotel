@@ -27,13 +27,15 @@ class BookRoomController
                 'endDate',
                 'SDT',
                 'tenPhong',
-                'gia',
-                'request',
+                'gia'
             ],
                 $aData)) {
                 if (checkDataEmpty($aData)) {
                     if ($this->verifyToken($aData['token'], true)) {
                         $oUser = $this->decodeJWT($aData['token']);
+                        if (!isset($aData['request']) || empty($aData['request'])) {
+                            $aData['request'] = '';
+                        }
                         if (UserModel::isEmailExist($oUser->email)) {
                             $userID = $oUser->ID;
                             $aData['MaUser'] = $userID;

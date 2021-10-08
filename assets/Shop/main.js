@@ -25,6 +25,7 @@ $(document).ready(function () {
         let email = $('#bookRoom_email').val();
         let gia = $('#bookRoom_gia').val();
         let tenPhong = $('#bookRoom_tenPhong').val();
+        let checkIsUserLogin = $('#bookRoom_isUserLogin').val();
         if (email === '') {
             alert('email is required');
         }
@@ -37,7 +38,11 @@ $(document).ready(function () {
             alert('sdt is required');
         }
         let request = $('#bookRoom_request').val();
-        if (email !== '' && fullName !== '' && sdt !== '') {
+        console.log(checkIsUserLogin);
+        if (checkIsUserLogin==='false'){
+            $(location).attr('href', GLOBAL_HOTEL.url+'login');
+        }
+        if (email !== '' && fullName !== '' && sdt !== '' && checkIsUserLogin==='true') {
             $.ajax({
                     url: GLOBAL_HOTEL.url + 'bookRoom',
                     type: "POST",
@@ -57,6 +62,7 @@ $(document).ready(function () {
                         if (oResponse.status === 'success') {
                             $('#bookRoomQRCode').empty().append('<img src="' + oResponse.data.src + '" style="height:' +
                                 ' 400px;width: 400px; display: block;margin: 0 auto">');
+                            alert("Congratulations on your successful booking !!!");
                         } else {
                             alert(oResponse.message);
                         }
