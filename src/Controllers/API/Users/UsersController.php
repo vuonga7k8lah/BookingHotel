@@ -33,7 +33,7 @@ class UsersController
                 'username'   => $oUSer[2],
                 'email'      => $oUSer[7],
                 'role'       => $oUSer[5],
-                'qrcode'  => $oUSer[9],
+                'qrcode'     => $oUSer[9],
                 'createDate' => $oUSer[10],
             ];
         }
@@ -78,24 +78,24 @@ class UsersController
     {
         $aData = $_POST;
         try {
-            if (checkDataIsset(['hoTen', 'username','email', 'password', 'SDT'], $aData)) {
+            if (checkDataIsset(['hoTen', 'username', 'email', 'password', 'SDT'], $aData)) {
                 if (checkDataEmpty($aData)) {
                     $aData['password'] = md5($_POST['password']);
                     $aData['SDT'] = (int)$_POST['SDT'];
                     if (!UserModel::isEmailExist($aData['email'])) {
-                            $userID = UserModel::insert($aData);
-                            if ($userID ?? '') {
-                                $token = $this->encodeJWT([
-                                    'ID'       => $userID,
-                                    'username' => $aData['username'],
-                                    'hoTen'    => $aData['hoTen'],
-                                    'email'    => $aData['email'],
-                                ]);
-                                UserModel::updateToken($userID, $token);
-                                echo HandleResponse::success('The account create successfully');
-                            } else {
-                                throw new Exception('The account not create successfully', 401);
-                            }
+                        $userID = UserModel::insert($aData);
+                        if ($userID ?? '') {
+                            $token = $this->encodeJWT([
+                                'ID'       => $userID,
+                                'username' => $aData['username'],
+                                'hoTen'    => $aData['hoTen'],
+                                'email'    => $aData['email'],
+                            ]);
+                            UserModel::updateToken($userID, $token);
+                            echo HandleResponse::success('The account create successfully');
+                        } else {
+                            throw new Exception('The account not create successfully', 401);
+                        }
                     } else {
                         throw new Exception('Sorry,the account is exist', 401);
                     }
@@ -113,21 +113,21 @@ class UsersController
     {
         $aData['token'] = $this->getTokenHeaders();
         try {
-            if ($this->verifyToken($aData['token'])) {
-                if (checkDataIsset(['ID'], $aData)) {
+            if ($this->verifyToken($aData['token'],true)) {
+                $oUser = $this->decodeJWT($aData['token']);
+                $aData['ID'] = $oUser->ID;
+                if (checkDataIsset([], $aData)) {
                     if (checkDataEmpty($aData)) {
-                        if (UserModel::isEmailExist($aData['email'])) {
-                            $status = UserModel::update($aData['ID'], $aData);
-                            if ($status) {
-                                echo HandleResponse::success('The account is update successfully');
-                            } else {
-                                throw new Exception('The account is update not successfully', 401);
-                            }
+                        $status = UserModel::update($aData['ID'], $aData);
+                        if ($status) {
+                            echo HandleResponse::success('The account is update successfully');
                         } else {
-                            throw new Exception('Sorry,the email is exist');
+                            throw new Exception('The account is update not successfully', 401);
                         }
                     }
                 }
+            }else{
+                throw new Exception('Sorry,User not access', 401);
             }
         } catch (Exception $exception) {
             echo HandleResponse::error($exception->getMessage(), $exception->getCode());

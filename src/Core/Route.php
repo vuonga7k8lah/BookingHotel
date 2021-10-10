@@ -75,9 +75,51 @@ class Route
             case 'PUT':
                 $aData = [];
                 $rawData = file_get_contents("php://input");
+                $eEntities = [
+                    '%21',
+                    '%2A',
+                    '%27',
+                    '%28',
+                    '%29',
+                    '%3B',
+                    '%3A',
+                    '%40',
+                    '%26',
+                    '%3D',
+                    '%2B',
+                    '%24',
+                    '%2C',
+                    '%2F',
+                    '%3F',
+                    '%25',
+                    '%23',
+                    '%5B',
+                    '%5D'
+                ];
+                $aReplacements = [
+                    '!',
+                    '*',
+                    "'",
+                    "(",
+                    ")",
+                    ";",
+                    ":",
+                    "@",
+                    "&",
+                    "=",
+                    "+",
+                    "$",
+                    ",",
+                    "/",
+                    "?",
+                    "%",
+                    "#",
+                    "[",
+                    "]"
+                ];
                 foreach (explode('&', $rawData) as $data) {
                     $aCoverData = explode('=', $data);
-                    $aData[$aCoverData[0]] = $aCoverData[1];
+                    $aData[$aCoverData[0]] = str_replace($eEntities, $aReplacements, $aCoverData[1]);
                 }
                 break;
         }
@@ -86,7 +128,7 @@ class Route
 
     public function directRoute($aUri, $method)
     {
-        if (!$controller = $this->routeIsExist($aUri['route'].'/', $method)) {
+        if (!$controller = $this->routeIsExist($aUri['route'] . '/', $method)) {
             $this->callRoute('BookingHotel\Controllers\Shop\Page404\Page404Controller', 'getView');
             die();
         } else {
