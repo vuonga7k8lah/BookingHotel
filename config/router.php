@@ -15,7 +15,7 @@ return [
         'profile'           => 'BookingHotel\Controllers\Shop\Profile\ProfileController@getView',
         //detail Blog
         'detailBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getViewDetail',
-        'listBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getListBlog',
+        'listBlog/'         => 'BookingHotel\Controllers\Shop\Blog\BlogController@getListBlog',
 
         ////----------------------API-----------
 
@@ -33,6 +33,8 @@ return [
         'search-hotels/'    => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotels',
         // Rating
         'rating-rooms/'     => 'BookingHotel\Controllers\API\Rating\RatingController@getListRatingRoom',
+        //order
+        'orders'            => 'BookingHotel\Controllers\API\Order\OrderAPIController@getOrderUser',
 
 
         ////----------------------Admin-----------
