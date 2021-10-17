@@ -23,7 +23,7 @@ class RoomModel
 
     public static function getRoomsByMaKS($MaKS)
     {
-        return DB::Connect()->query("SELECT * FROM rooms WHERE MaKS='.$MaKS.'")->fetch_all();
+        return DB::Connect()->query("SELECT * FROM rooms WHERE MaKS={$MaKS}")->fetch_all();
     }
 
     public static function getRoom($id): ?array
