@@ -35,6 +35,7 @@ return [
         'rating-rooms/'     => 'BookingHotel\Controllers\API\Rating\RatingController@getListRatingRoom',
         //order
         'orders'            => 'BookingHotel\Controllers\API\Order\OrderAPIController@getOrderUser',
+        'all-orders'        => 'BookingHotel\Controllers\API\Order\OrderAPIController@getAllOrder',
 
 
         ////----------------------Admin-----------

@@ -19,23 +19,39 @@ class OrderAPIController
         try {
             if ($this->verifyToken($token, true)) {
                 $userID = ($this->decodeJWT($token))->ID;
-                $aOrder=OrderModel::getListOrderByUserID($userID);
-                foreach ($aOrder as $aItem){
-                    $aData[]=[
-                        'tenKS'=>$aItem[0],
-                        'tenPhong'=>$aItem[1],
-                        'gia'=>$aItem[2],
-                        'startDate'=>$aItem[3],
-                        'endDate'=>$aItem[4],
-                        'qrcode'=>$aItem[5],
+                $aOrder = OrderModel::getListOrderByUserID($userID);
+                foreach ($aOrder as $aItem) {
+                    $aData[] = [
+                        'tenKS'     => $aItem[0],
+                        'tenPhong'  => $aItem[1],
+                        'gia'       => $aItem[2],
+                        'startDate' => $aItem[3],
+                        'endDate'   => $aItem[4],
+                        'qrcode'    => $aItem[5],
                     ];
                 }
-                echo HandleResponse::success('list data',$aData);
+                echo HandleResponse::success('list data', $aData);
             } else {
                 throw new Exception('Sorry,User not access', 401);
             }
         } catch (Exception $exception) {
             echo HandleResponse::error($exception->getMessage(), $exception->getCode());
         }
+    }
+
+    public function getAllOrder()
+    {
+        $aOrder = OrderModel::getListOrderBy();
+        foreach ($aOrder as $aItem) {
+            $aData[] = [
+                'tenKS'     => $aItem[0],
+                'tenPhong'  => $aItem[1],
+                'gia'       => $aItem[2],
+                'startDate' => $aItem[3],
+                'endDate'   => $aItem[4],
+                'qrcode'    => $aItem[5],
+            ];
+        }
+        echo HandleResponse::success('list data', $aData);
     }
 }
