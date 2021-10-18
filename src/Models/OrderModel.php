@@ -49,8 +49,7 @@ class OrderModel
 
     public static function getListOrderBy()
     {
-        $sql="SELECT hotels.tenKS,rooms.tenPhong,orders.gia,orders.startDate,orders.endDate,users.qrcode FROM orders JOIN users ON orders.MaUser=users.ID JOIN rooms on orders.MaPhong=rooms.MaPhong JOIN hotels ON rooms.MaKS=hotels.MaKS";
-        $query = DB::Connect()->query($sql)->fetch_all();
+        $query = DB::Connect()->query("SELECT * FROM orders")->fetch_all();
         return is_array($query) ? $query : [];
     }
 }

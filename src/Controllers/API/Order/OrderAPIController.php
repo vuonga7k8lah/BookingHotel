@@ -44,12 +44,14 @@ class OrderAPIController
         $aOrder = OrderModel::getListOrderBy();
         foreach ($aOrder as $aItem) {
             $aData[] = [
-                'tenKS'     => $aItem[0],
-                'tenPhong'  => $aItem[1],
-                'gia'       => $aItem[2],
-                'startDate' => $aItem[3],
-                'endDate'   => $aItem[4],
-                'qrcode'    => $aItem[5],
+                'MaOrder'    => $aItem[0],
+                'MaPhong'    => $aItem[1],
+                'MaUser'     => $aItem[2],
+                'info'       => json_decode($aItem[3], true),
+                'startDate'  => $aItem[4],
+                'endDate'    => $aItem[5],
+                'gia'        => $aItem[6],
+                'createDate' => $aItem[7],
             ];
         }
         echo HandleResponse::success('list data', $aData);
