@@ -64,7 +64,7 @@ require_once 'src/Views/Shop/navigation.php';
                             <div class="col-md d-flex py-md-4">
                                 <div class="form-group align-self-stretch d-flex align-items-end">
                                     <div class="wrap bg-white align-self-stretch py-3 px-4">
-                                        <label for="checkInDateSearch">Check-in Date</label>
+                                        <label for="checkInDateSearch">Ngày Đặt Phòng</label>
                                         <input name="chekInDate" required id="checkInDateSearch" type="text"
                                                class="form-control checkin_date"
                                                placeholder="Check-in date">
@@ -74,7 +74,7 @@ require_once 'src/Views/Shop/navigation.php';
                             <div class="col-md d-flex py-md-4">
                                 <div class="form-group align-self-stretch d-flex align-items-end">
                                     <div class="wrap bg-white align-self-stretch py-3 px-4">
-                                        <label for="checkOutDateSearch">Check-out Date</label>
+                                        <label for="checkOutDateSearch">Ngày trả phòng</label>
                                         <input name="checkOutDate" id="checkOutDateSearch" type="text"
                                                class="form-control checkout_date"
                                                required
@@ -105,17 +105,17 @@ require_once 'src/Views/Shop/navigation.php';
                             <div class="col-md d-flex py-md-4">
                                 <div class="form-group align-self-stretch d-flex align-items-end">
                                     <div class="wrap bg-white align-self-stretch py-3 px-4">
-                                        <label for="#">Guests</label>
+                                        <label for="#">Số Người</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                                 <select name="" id="" class="form-control">
-                                                    <option value="">1 Adult</option>
-                                                    <option value="">2 Adult</option>
-                                                    <option value="">3 Adult</option>
-                                                    <option value="">4 Adult</option>
-                                                    <option value="">5 Adult</option>
-                                                    <option value="">6 Adult</option>
+                                                    <option value="">1 Người</option>
+                                                    <option value="">2 Người</option>
+                                                    <option value="">3 Người</option>
+                                                    <option value="">4 Người</option>
+                                                    <option value="">5 Người</option>
+                                                    <option value="">6 Người</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -126,7 +126,7 @@ require_once 'src/Views/Shop/navigation.php';
                                 <div class="form-group d-flex align-self-stretch">
                                     <button id="btn-search-hotels" class="btn btn-black py-5 py-md-3 px-4
                                     align-self-stretch
-                                    d-block"><span>Check Availability</span></button>
+                                    d-block"><span>Kiểm Tra</span></button>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@ require_once 'src/Views/Shop/navigation.php';
                     <a href="#" class="services-wrap img align-items-end d-flex"
                        style="background-image: url(assets/Shop/images/room-3.jpg);">
                         <div class="text text-center pb-2">
-                            <h3>Special Rooms</h3>
+                            <h3>Phòng Đặc Biệt</h3>
                         </div>
                     </a>
                 </div>
@@ -152,7 +152,7 @@ require_once 'src/Views/Shop/navigation.php';
                     <a href="#" class="services-wrap img align-items-end d-flex"
                        style="background-image: url(assets/Shop/images/swimming-pool.jpg);">
                         <div class="text text-center pb-2">
-                            <h3>Swimming Pool</h3>
+                            <h3>Hồ Bơi</h3>
                         </div>
                     </a>
                 </div>
@@ -160,7 +160,7 @@ require_once 'src/Views/Shop/navigation.php';
                     <a href="#" class="services-wrap img align-items-end d-flex"
                        style="background-image: url(assets/Shop/images/resto.jpg);">
                         <div class="text text-center pb-2">
-                            <h3>Restaurant</h3>
+                            <h3>Quán ăn</h3>
                         </div>
                     </a>
                 </div>
@@ -169,7 +169,7 @@ require_once 'src/Views/Shop/navigation.php';
                          style="background-image: url(assets/Shop/images/sleep.jpg);">
                         <div class="text text-center pb-2">
                             <h3 class="mb-0">Suites &amp; Rooms</h3>
-                            <span>Special Rooms</span>
+                            <span>Phòng đặc biệt</span>
                             <div class="d-flex mt-2 justify-content-center">
                             </div>
                         </div>
@@ -183,8 +183,8 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Welcome to Roxandrea Hotel</span>
-                    <h2 class="mb-4">A New Vision of Luxury Hotel</h2>
+                    <span class="subheading">Chào mừng bạn đến</span>
+                    <h2 class="mb-4">Roxandrea Hotel</h2>
                 </div>
             </div>
             <div class="row d-flex">
@@ -196,7 +196,7 @@ require_once 'src/Views/Shop/navigation.php';
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Friendly Service</h3>
+                            <h3 class="heading mb-3">Dịch vụ thân thiện</h3>
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@ require_once 'src/Views/Shop/navigation.php';
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Transfer Services</h3>
+                            <h3 class="heading mb-3">Di Chuyển Thuận Tiện</h3>
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@ require_once 'src/Views/Shop/navigation.php';
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Suits &amp; SPA</h3>
+                            <h3 class="heading mb-3">Chuyên Nghiệp</h3>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@ require_once 'src/Views/Shop/navigation.php';
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Cozy Rooms</h3>
+                            <h3 class="heading mb-3">Hiện Đại</h3>
                         </div>
                     </div>
                 </div>
@@ -244,8 +244,8 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container-fluid px-0">
             <div class="row no-gutters justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Location Hotel</span>
-                    <h2 class="mb-4">Location Hotels</h2>
+                    <span class="subheading">Địa Điểm</span>
+                    <h2 class="mb-4">Danh Sách Địa Điểm</h2>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -254,9 +254,8 @@ require_once 'src/Views/Shop/navigation.php';
                         <div class="img d-flex align-items-center"
                              style="background-image: url(assets/Shop/images/bg_3.jpg);">
                             <div class="text text-center px-4 py-4">
-                                <h2>Welcome to system <a href="index.html">Eternity</a> Hotel</h2>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary
-                                    regelialia.</p>
+                                <h2>Chào Mừng Bạn Đến Với Hệ Thống Khách Sạn <a href="index.html">Eternity</a</h2>
+                                <p>Hệ Thống Khách Sạn Số 1 Việt Nam</p>
                             </div>
                         </div>
                     </div>
@@ -292,8 +291,8 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Testimony</span>
-                    <h2 class="mb-4">Our Happy Guest Says</h2>
+                    <span class="subheading">Phản Hồi</span>
+                    <h2 class="mb-4">Đánh Giá Và Phản Hồi Của Khách</h2>
                 </div>
             </div>
             <div class="row justify-content-center">

@@ -74,8 +74,8 @@ $aUser=\BookingHotel\Models\UserModel::getUserWithID($_SESSION['userID']);
                                     <img class="card-img-top" src="<?=$aItem['5']?>" alt="<?=$aItem[1]?>">
                                     <div class="card-body">
                                         <h5 class="card-title">Tên Khách Sạn:<?=$aItem[0]?></h5>
-                                        <h6 class="card-title">Check Date In:<?=$aItem[3]?></h6>
-                                        <h6 class="card-title">Check Date Out:<?=$aItem[4]?></h6>
+                                        <h6 class="card-title">Ngày Đến:<?=$aItem[3]?></h6>
+                                        <h6 class="card-title">Ngày Trả:<?=$aItem[4]?></h6>
                                         <p class="card-text">Tên Phòng:<?=$aItem[1]?></p>
                                         <p href="#" class="btn btn-primary" style="display: block;margin: 0 auto">Giá:
                                             <?=$aItem[2]?></p>

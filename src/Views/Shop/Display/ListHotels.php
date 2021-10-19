@@ -32,8 +32,8 @@ $srcLocation = json_decode($aLocation['image'], true)[0];
         <div class="container-fluid px-0">
             <div class="row no-gutters justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Location</span>
-                    <h2 class="mb-4">List Hottel In Location</h2>
+                    <span class="subheading">Địa Điểm</span>
+                    <h2 class="mb-4">Danh Sách Khách Sạn Trong Địa Điểm</h2>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -56,8 +56,7 @@ $srcLocation = json_decode($aLocation['image'], true)[0];
                                     </p>
                                     <h3 class="mb-3"><?= $aItem[2] ?></h3>
                                     <p class="pt-1"><button id="btn-hotel_<?= $aItem[0] ?>" class="btn-custom px-3
-                                    py-2">View Hotel
-                                            Details <span class="icon-long-arrow-right"></span></button></p>
+                                    py-2">Xem Chi Tiết<span class="icon-long-arrow-right"></span></button></p>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +113,7 @@ $srcLocation = json_decode($aLocation['image'], true)[0];
                                                     <td><a href="<?=URL::uri('detailsRoom').'/'.$room[0]?>"><button
                                                                     type="button"
                                                                                                  class="btn
-                                                    btn-primary">View Detail</button></a></td>
+                                                    btn-primary">Xem Chi Tiết</button></a></td>
                                                 </tr>
                                                 <?php $i++; endforeach;?>
                                                 </tbody>

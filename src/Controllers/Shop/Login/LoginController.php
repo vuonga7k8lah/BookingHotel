@@ -70,7 +70,7 @@ class LoginController
                         Session::set('userID', $ID);
                         Session::set('email', $aUser['email']);
                         Session::set('hoTen', $aUser['hoTen']);
-                        URL::redirect('');
+                        URL::redirect('location/3');
                     } else {
                         throw new Exception('Sorry, The account login error', 401);
                     }
