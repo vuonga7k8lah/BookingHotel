@@ -93,7 +93,7 @@ function uploadImageMany($aData)
             }
             // Xoa file da duoc upload va ton tai trong thu muc tam
             if (isset($data['tmp_name'][$i]) && is_file($data['tmp_name'][$i]) &&
-                file_exists($data['Images']['tmp_name'][$i])) {
+                file_exists($data['tmp_name'][$i])) {
                 unlink($data['tmp_name'][$i]);
             }
         }

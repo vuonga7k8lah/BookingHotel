@@ -25,6 +25,7 @@ class DB
                 App::get('config/app')['Database']['database']
             );
         }
+        mysqli_set_charset(self::$self,'UTF8');
         return self::$self;
     }
 
