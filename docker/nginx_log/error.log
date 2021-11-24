@@ -1,0 +1,130 @@
+2021/11/23 14:07:44 [error] 20#20: *2 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/html/src/Database/DB.php on line 25PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Database/User/UserDB.php on line 33PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Models/UserModel.php on line 55PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Models/UserModel.php on line 56PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Database/User/UserDB.php on line 37PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Database/Hotel/HotelDB.php on line 30PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Database/Hotel/HotelDB.php on line 33PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Database/Location/LocationDB.php on line 25" while reading response header from upstream, client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/23 14:07:45 [error] 20#20: *2 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/23 14:11:43 [error] 20#20: *10 directory index of "/var/www/html/" is forbidden, client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", host: "0.0.0.0:9011"
+2021/11/23 14:15:28 [error] 20#20: *13 directory index of "/var/www/html/" is forbidden, client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", host: "0.0.0.0:9011"
+2021/11/23 14:15:31 [error] 20#20: *13 directory index of "/var/www/html/" is forbidden, client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", host: "0.0.0.0:9011"
+2021/11/23 14:16:11 [error] 20#20: *13 directory index of "/var/www/html/" is forbidden, client: 172.26.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", host: "0.0.0.0:9011"
+2021/11/23 15:26:02 [error] 18#18: *4 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/23 23:54:52 [error] 26#26: *2 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/23 23:59:34 [error] 26#26: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:03:02 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:03:59 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:04:04 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:04:29 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:04:40 [error] 25#25: *18 open() "/var/www/html/location/assets/IMG/404.jpg" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/assets/IMG/404.jpg HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/3"
+2021/11/24 00:05:00 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(50): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:14:15 [error] 25#25: *30 open() "/var/www/html/location/assets/IMG/404.jpg" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/assets/IMG/404.jpg HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/3"
+2021/11/24 00:20:49 [error] 25#25: *34 open() "/var/www/html/location/assets/IMG/404.jpg" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/assets/IMG/404.jpg HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/3"
+2021/11/24 00:21:48 [error] 25#25: *34 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(51): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
+2021/11/24 00:21:57 [error] 25#25: *34 open() "/var/www/html/location/assets/IMG/404.jpg" failed (2: No such file or directory), client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/assets/IMG/404.jpg HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/3"
+2021/11/24 00:24:04 [error] 25#25: *55 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot pass parameter 4 by reference in /var/www/html/src/Core/Request.php:22
+Stack trace:
+#0 /var/www/html/src/Core/bootstrap.php(35): BookingHotel\Core\Request::uri()
+#1 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#2 {main}
+  thrown in /var/www/html/src/Core/Request.php on line 22" while reading response header from upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/3 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/24 00:25:50 [error] 25#25: *60 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot pass parameter 4 by reference in /var/www/html/src/Core/Request.php:22
+Stack trace:
+#0 /var/www/html/src/Core/bootstrap.php(35): BookingHotel\Core\Request::uri()
+#1 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#2 {main}
+  thrown in /var/www/html/src/Core/Request.php on line 22" while reading response header from upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/3 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/24 00:26:25 [error] 25#25: *60 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot pass parameter 4 by reference in /var/www/html/src/Core/Request.php:22
+Stack trace:
+#0 /var/www/html/src/Core/bootstrap.php(35): BookingHotel\Core\Request::uri()
+#1 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#2 {main}
+  thrown in /var/www/html/src/Core/Request.php on line 22" while reading response header from upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/3 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/24 00:39:44 [error] 25#25: *63 FastCGI sent in stderr: "PHP message: PHP Warning:  preg_replace() expects parameter 4 to be int, array given in /var/www/html/src/Core/Request.php on line 22" while reading response header from upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET /location/3 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
+2021/11/24 00:40:26 [error] 27#27: *68 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(51): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/3"
+2021/11/24 00:41:22 [error] 27#27: *68 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Models/BlogModel.php:65
+Stack trace:
+#0 /var/www/html/src/Views/Shop/Home/Home.php(429): BookingHotel\Models\BlogModel::getBlogsLimit()
+#1 /var/www/html/src/Controllers/Shop/Home/HomeController.php(11): include('/var/www/html/s...')
+#2 [internal function]: BookingHotel\Controllers\Shop\Home\HomeController->getView()
+#3 /var/www/html/src/Core/Route.php(61): call_user_func_array()
+#4 /var/www/html/src/Core/Route.php(49): BookingHotel\Core\Route->callRoute()
+#5 /var/www/html/src/Core/bootstrap.php(51): BookingHotel\Core\Route->direct()
+#6 /var/www/html/index.php(7): require_once('/var/www/html/s...')
+#7 {main}
+  thrown in /var/www/html/src/Models/BlogModel.php on line 65" while reading upstream, client: 172.28.0.1, server: vuongdttn.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/location/4"

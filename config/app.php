@@ -1,11 +1,11 @@
 <?php
 return [
-    'HomeBase' => 'http://127.0.0.1/BookingHotel/',
-    'HomeURL' => '/BookingHotel/',
+    'HomeBase' => 'http://0.0.0.0:9011/',
+    'HomeURL' => '/',
     'Database'=>[
-        'host'=>'localhost',
-        'username'=>'root',
-        'password'=>'',
+        'host'=>'mysql',
+        'username'=>'vuongkma',
+        'password'=>'123456',
         'database'=>'BookingHotel'
     ]
 ];

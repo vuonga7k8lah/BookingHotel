@@ -19,6 +19,6 @@ class Request
 
     public static function uri()
     {
-        return str_replace(App::get('config/app')['HomeURL'], '', $_SERVER['REQUEST_URI']);
+        return preg_replace('/^\//', '', $_SERVER['REQUEST_URI']);
     }
 }
