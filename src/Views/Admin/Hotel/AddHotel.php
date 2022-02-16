@@ -1,30 +1,22 @@
 <?php
-
+CheckLoginAdmin();
 use BookingHotel\Core\URL;
 
-CheckLoginAdmin();
 require_once 'src/Views/Admin/header.php';
 require_once 'src/Views/Admin/navigation.php';
-
 $aRowDD=\BookingHotel\Models\LocationModel::getLocations();
 ?>
-    <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Hotels
-                        <small>add</small>
-                    </h1>
-                </div>
+    <div class="right">
+        <div class="right__content">
+            <div class="right__title">Add Hotel</div>
 
-                <!-- /.col-lg-12 -->
-                <div class="col-lg-7" style="padding-bottom:120px">
-                    <?php if (isset($_SESSION['error_addHotel'])): ?>
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <?= $_SESSION['error_addHotel'] ?>
-                        </div>
-                    <?php endif ?>
+            <div class="right__table">
+                <?php if (isset($_SESSION['error_addLocation'])): ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <?= $_SESSION['error_addLocation'] ?>
+                    </div>
+                <?php endif ?>
                     <form action="<?= URL::uri('a.addHotel'); ?>" method="POST" enctype="multipart/form-data"
                           novalidate>
                         <div class="form-group">
@@ -69,13 +61,12 @@ $aRowDD=\BookingHotel\Models\LocationModel::getLocations();
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">SAVE HOTEL</button>
                         </div>
-                        </form>
-                </div>
+                    </form>
+
+
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
     </div>
+
 <?php
-\BookingHotel\Core\Session::checkReloadPage('error_addHotel');
 require_once 'src/Views/Admin/footer.php';

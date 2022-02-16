@@ -133,14 +133,6 @@ $srcLocation = json_decode($aLocation['image'], true)[0];
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="container mt-2">
-            <h2>TÌNH HÌNH DỊCH BỆNH CORONA MỚI NHẤT</h2>
-            <iframe data-lazyloaded="1" src="https://ncovi.vnpt.vn/views/ncovi_detail.html" frameborder="0"
-                    data-src="https://ncovi.vnpt.vn/views/ncovi_detail.html" id="dantri-widget-corona-undefined"
-                    allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="yes"
-                    style="width: 100%; height: 400px; overflow: hidden;" class="litespeed-loaded"
-                    data-was-processed="true"></iframe>
-        </div>
     </section>
 <?php
 require_once 'src/Views/Shop/footer.php';

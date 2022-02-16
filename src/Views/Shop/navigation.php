@@ -20,9 +20,9 @@ $aUri = explode('/', $uri);
                 <li class="nav-item active"><a href="<?= URL::uri() ?>" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item active"><a href="<?= URL::uri('') ?>#room" class="nav-link">Rooms</a></li>
-                <li class="nav-item active"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item active"><a href="<?= URL::uri('about') ?>" class="nav-link">About</a></li>
                 <li class="nav-item active"><a href="<?= URL::uri('listBlog/') ?>" class="nav-link">Blog</a></li>
-                <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="<?= URL::uri('contact') ?>" class="nav-link">Contact</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

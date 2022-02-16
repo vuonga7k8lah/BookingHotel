@@ -1,5 +1,5 @@
 <?php
-//CheckLoginAdmin();
+//isUserLogin();
 use BookingHotel\Core\Request;
 use BookingHotel\Core\Session;
 use BookingHotel\Core\URL;
@@ -7,27 +7,22 @@ use BookingHotel\Models\LocationModel;
 
 require_once 'src/Views/Admin/header.php';
 require_once 'src/Views/Admin/navigation.php';
+CheckLoginAdmin();
 $ID = Request::getIDOnURL();
 $aRow = LocationModel::getLocation($ID);
 ?>
-    <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Location
-                        <small>edit</small>
-                    </h1>
-                </div>
-
+    <div class="right">
+        <div class="right__content">
+            <div class="right__title">Bảng điều khiển</div>
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-7" style="padding-bottom:120px">
+                <div class="right__table">
                     <?php if (isset($_SESSION['error_updateLocation'])): ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <?= $_SESSION['error_updateLocation'] ?>
                         </div>
                     <?php endif ?>
-                    <form action="<?= URL::uri('a.editLocation'); ?>" method="POST" enctype="multipart/form-data"
+                    <form action="<?= URL::uri('a.editLocation'); ?>" style="width: 100%" method="POST" enctype="multipart/form-data"
                           novalidate>
                         <div class="form-group">
                             <label>Tên Địa Điểm</label>
@@ -68,8 +63,6 @@ $aRow = LocationModel::getLocation($ID);
                 </div>
             </div>
             <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
     </div>
 <?php
 Session::checkReloadPage('error_updateLocation');

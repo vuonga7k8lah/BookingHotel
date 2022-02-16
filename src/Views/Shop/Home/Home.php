@@ -179,66 +179,6 @@ require_once 'src/Views/Shop/navigation.php';
         </div>
     </section>
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Chào mừng bạn đến</span>
-                    <h2 class="mb-4">Roxandrea Hotel</h2>
-                </div>
-            </div>
-            <div class="row d-flex">
-                <div class="col-md pr-md-1 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services py-4 d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="flaticon-reception-bell"></span>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading mb-3">Dịch vụ thân thiện</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md px-md-1 d-flex align-sel Searchf-stretch ftco-animate">
-                    <div class="media block-6 services py-4 d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="flaticon-car"></span>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading mb-3">Di Chuyển Thuận Tiện</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md px-md-1 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services py-4 d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="flaticon-spa"></span>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading mb-3">Chuyên Nghiệp</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md pl-md-1 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services py-4 d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="ion-ios-bed"></span>
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="heading mb-3">Hiện Đại</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-section bg-light ftco-room" id="room">
         <div class="container-fluid px-0">
@@ -346,7 +286,7 @@ require_once 'src/Views/Shop/navigation.php';
                                 </div>
                                 <div class="item">
                                     <div class="testimony-wrap py-4 pb-5">
-                                        <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                                        <div class="user-img mb-4" style="background-image: url(assets/Shop/images/person_3.jpg)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>

@@ -4,6 +4,9 @@ return [
         ////-------------------Shop----------------------
         // Home
         ''                  => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
+        // Home
+        'contact'                  => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewContact',
+        'about'                  => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewAbout',
         // Display
         'location/'         => 'BookingHotel\Controllers\Shop\Display\DisplayController@getListHotel',
         'detailsRoom/'      => 'BookingHotel\Controllers\Shop\Display\DisplayController@getDetailsRoom',
@@ -67,6 +70,11 @@ return [
         'a.editBlog/'       => 'BookingHotel\Controllers\Admin\Blog\BlogController@getEditView',
         'a.deleteBlog/'     => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleDelete',
         'a.listBlog'        => 'BookingHotel\Controllers\Admin\Blog\BlogController@getListView',
+        //// Users
+        'a.addUser'         => 'BookingHotel\Controllers\Admin\User\UserController@getAddView',
+        'a.editUser/'       => 'BookingHotel\Controllers\Admin\User\UserController@getEditView',
+        'a.deleteUser/'     => 'BookingHotel\Controllers\Admin\User\UserController@handleDelete',
+        'a.listUser'        => 'BookingHotel\Controllers\Admin\User\UserController@getListView',
 
     ],
 
@@ -109,6 +117,9 @@ return [
         //// Blog
         'a.addBlog'      => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleAdd',
         'a.editBlog'     => 'BookingHotel\Controllers\Admin\Blog\BlogController@handleEdit',
+        //// User
+        'a.addUser'      => 'BookingHotel\Controllers\Admin\User\UserController@handleAdd',
+        'a.editUser'     => 'BookingHotel\Controllers\Admin\User\UserController@handleEdit',
         //// upload
         'a.upload'       => 'BookingHotel\Controllers\Admin\Upload\UploadController@handleUpload',
     ]

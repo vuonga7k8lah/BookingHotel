@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile
     container_name: vuongdttn1998_service
+    restart: on-failure
     working_dir: /var/www/html
     ports:
       - "9011:80"
@@ -17,7 +18,8 @@ services:
       - mysql
   mysql:
     image: mysql:5.6
-    container_name: vuongdttn1998_mysql
+    container_name: vuongdttn1998_mysql1
+    restart: on-failure
     ports:
       - "9012:3306"
     volumes:
@@ -29,7 +31,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
   phpmyadmin:
     image: phpmyadmin
-    container_name: vuongdttn1998_phpmyadmin
+    container_name: vuongdttn1998_phpmyadmin1
+    restart: on-failure
     depends_on:
       - mysql
     ports:
