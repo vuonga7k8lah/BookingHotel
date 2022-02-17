@@ -32,7 +32,6 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 if (Request::method() == 'GET' || Request::method() == 'DELETE') {
-    
     if (count($_GET) > 1 || count(explode('/', Request::uri())) > 1) {
         $aData = $_GET;
         unset($aData['route']);

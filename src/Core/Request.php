@@ -19,6 +19,6 @@ class Request
 
     public static function uri()
     {
-        return preg_replace('/^\//', '', $_SERVER['REQUEST_URI']);
+        return preg_replace('/^\/BookingHotel\//', '', $_SERVER['REQUEST_URI']);
     }
 }

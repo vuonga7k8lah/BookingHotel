@@ -128,6 +128,7 @@ class Route
 
     public function directRoute($aUri, $method)
     {
+
         if (!$controller = $this->routeIsExist($aUri['route'] . '/', $method)) {
             $this->callRoute('BookingHotel\Controllers\Shop\Page404\Page404Controller', 'getView');
             die();
