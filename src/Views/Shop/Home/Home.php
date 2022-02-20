@@ -9,6 +9,7 @@ require_once 'src/Views/Shop/navigation.php';
     <div class="hero">
         <section class="home-slider owl-carousel">
             <div class="slider-item"
+                 
                  style="background-image:url(https://c4.wallpaperflare.com/wallpaper/470/673/182/nha-trang-beach-tour-1-wallpaper-preview.jpg);">
                 <div class="overlay"></div>
                 <div class="container">

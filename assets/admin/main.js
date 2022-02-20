@@ -11,7 +11,7 @@ $(document).ready(function(){
         }
         // AJAX request
         $.ajax({
-            url: 'http://0.0.0.0:9011/a.upload',
+            url: 'http://127.0.0.1/BookingHotel/a.upload',
             type: 'POST',
             data: form_data,
             dataType: 'json',
@@ -45,7 +45,7 @@ $(document).ready(function(){
         }
         // AJAX request
         $.ajax({
-            url: 'http://0.0.0.0:9011/a.upload',
+            url: 'http://127.0.0.1/BookingHotel/a.upload',
             type: 'POST',
             data: form_data,
             dataType: 'json',
@@ -79,7 +79,7 @@ $(document).ready(function(){
         }
         // AJAX request
         $.ajax({
-            url: 'http://0.0.0.0:9011/a.upload',
+            url: 'http://127.0.0.1/BookingHotel/a.upload',
             type: 'POST',
             data: form_data,
             dataType: 'json',
@@ -113,7 +113,7 @@ $(document).ready(function(){
         }
         // AJAX request
         $.ajax({
-            url: 'http://0.0.0.0:9011/a.upload',
+            url: 'http://127.0.0.1/BookingHotel/a.upload',
             type: 'POST',
             data: form_data,
             dataType: 'json',

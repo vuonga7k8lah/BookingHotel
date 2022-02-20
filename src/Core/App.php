@@ -6,7 +6,7 @@ namespace BookingHotel\Core;
 
 class App
 {
-    private static array $aRegistry = [];
+    private static $aRegistry = [];
 
     public static function bind($key, $val)
     {

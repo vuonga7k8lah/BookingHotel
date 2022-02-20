@@ -79,7 +79,8 @@ require_once 'src/Views/Shop/navigation.php';
 
                 <div class="col-md-6 d-flex">
                     <div id="map" class="bg-white">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59587.97785449935!2d105.8019439925486!3d21.02273601626534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lpLCBIb8OgbiBLaeG6v20sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1645023778342!5m2!1svi!2s"
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.801578483851!2d120.72952941498882!3d24.143605484396897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346922a36f297a89%3A0x2435df5e939caadc!2sNational%20Chin-Yi%20University%20of%20Technology!5e0!3m2!1svi!2s!4v1645325170254!5m2!1svi!2s"
                                 width="540px"
                                 height="561px"
                                 style="border:0;" allowfullscreen="" loading="lazy"></iframe>
