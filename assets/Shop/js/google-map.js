@@ -47,26 +47,23 @@ function initMap() {
 // })
 // }
 // }
+    let name = document.getElementById('TenPhong').value;
+    let lat = document.getElementById('LatLng0').value;
+    let lng = document.getElementById('LatLng1').value;
 
     var map = new google.maps.Map(document.getElementById('map_canvas'), {
         zoom: 16,
-        center: new google.maps.LatLng(21.025644168422545, 105.84169038135032),
+        center: new google.maps.LatLng(lat, lng),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     let MarkerArray = [
         {
             position: {
-                lat: 21.028056088291898,
-                lng: 105.82475287415544
+                lat: lat,
+                lng: lng
             },
-            content: `<h2>Hanoi Hotel</h2>`
-        }, {
-            position: {
-                lat: 21.025473173484272,
-                lng: 105.85648092032352
-            },
-            content: `<h2>Sofitel Legend Metropole Hanoi</h2>`
+            content: `<h2>`+name+`</h2>`
         }
     ];
     for (let i = 0; i < MarkerArray.length; i++) {

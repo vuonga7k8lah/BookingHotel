@@ -12,7 +12,7 @@ class UsersController
 {
     use TrainJWT, TrainGetTokenHeader;
 
-    private array $aDefineCreateUser = ['hoTen', 'username', 'password', 'SDT', 'role', 'email'];
+    private  $aDefineCreateUser = ['hoTen', 'username', 'password', 'SDT', 'role', 'email'];
 
     public function getUser($aData)
     {

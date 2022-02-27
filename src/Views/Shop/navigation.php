@@ -29,12 +29,15 @@ $aUri = explode('/', $uri);
                         <?= isset($_SESSION['isUserLogin']) ? $_SESSION['hoTen'] : 'Account' ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<?= URL::uri('login') ?>">Login</a>
-                        <?php if (isset($_SESSION['isUserLogin'])): ?>
+                        <?php if (isset($_SESSION['isUserLogin'])){ ?>
                             <a class="dropdown-item" href="<?= URL::uri('profile') ?>">Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?= URL::uri('logout') ?>">Logout</a>
-                        <?php endif; ?>
+                        <?php }else{
+                            ?>
+                            <a class="dropdown-item" href="<?= URL::uri('login') ?>">Login</a>
+                        <?php
+                        } ?>
                     </div>
                 </li>
             </ul>

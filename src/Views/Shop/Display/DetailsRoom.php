@@ -11,7 +11,8 @@ require_once 'src/Views/Shop/navigation.php';
 $idRoom = Request::getIDOnURL();
 $aRoom = RoomModel::getRoom($idRoom);
 $aHotel = HotelModel::getHotel($aRoom['MaKS']);
-$srcHotel = json_decode($aHotel['image'], true)[0]
+$srcHotel = json_decode($aHotel['image'], true)[0];
+$LatLng = explode(',',$aHotel['diaChi']);
 ?>
     <div class="hero-wrap" style="background-image: url(<?= $srcHotel ?>);">
         <div class="overlay"></div>
@@ -49,16 +50,33 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         700px">
                             <?= $aRoom['content'] ?>
                         </div>
+                        <form>
+                            <input type="hidden" name="TenPhong" id="TenPhong" value="<?= $aHotel['tenKS'] ?>">
+                            <input type="hidden" name="LatLng0" id="LatLng0" value="<?= $LatLng[0] ?>">
+                            <input type="hidden" name="LatLng1" id="LatLng1" value="<?= $LatLng[1] ?>">
+                        </form>
                         <?php include getcwd() . '/src/Views/Shop/Comment/ViewCommentRating.php'; ?>
                     </div>
                 </div>
                 <div class="col-lg-4 sidebar ftco-animate">
                     <div class="sidebar-box">
-
-                        <button type="button" id="btn-booking_<?= $aRoom['MaPhong'] ?>" class="btn btn-lg btn-primary"
-                                style="display: block;margin:0
+                        <?php
+                        if (\BookingHotel\Models\OrderModel::checkOrderRoom($idRoom)){
+                            ?>
+                            <button type="button" class="btn btn-lg btn-primary"
+                                    style="display: block;margin:0
+                        auto">Xin Lỗi Phòng Đã Được Đặt
+                            </button>
+                                <?php
+                        }else{
+                          ?>
+                            <button type="button" id="btn-booking_<?= $aRoom['MaPhong'] ?>" class="btn btn-lg btn-primary"
+                                    style="display: block;margin:0
                         auto">Đặt Ngay
-                        </button>
+                            </button>
+                            <?php
+                        }
+                        ?>
                     </div>
                     <div class="sidebar-box ftco-animate">
                         <section>
@@ -123,6 +141,7 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                         <div class="modal-header" style="display: block;margin: 0 auto">
                             <h5 class="modal-title">Chi Tiết Đặt Phòng</h5>
                         </div>
+<!--                        id="bookRoom_startDate"-->
                         <div class="modal-body modal-xl">
                             <div class="container-fluid">
                                 <div class="row">
@@ -130,22 +149,25 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đến</label>
                                             <div class="col-sm-10">
-                                                <input type="datetime-local" id="bookRoom_startDate"
+                                                <input type="text"  class="form-control checkin_date"
+                                                       id="bookRoom_startDate"
                                                        value="<?= date('Y-m-d') ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đi</label>
                                             <div class="col-sm-10">
-                                                <input type="datetime-local" id="bookRoom_endDate"
+                                                <input type="text"  class="form-control checkout_date" id="bookRoom_endDate"
                                                        value="<?= date('Y-m-d', strtotime("+1 day")) ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Giá</label>
                                             <div class="col-sm-10">
-                                                <input type="text" id="bookRoom_gia" disabled readonly value="<?=
-                                                $aRoom['gia'] ?>">
+                                                <input type="text" class="form-control" id="bookRoom_gia"
+                                                       disabled
+                                                       readonly
+                                                       value="<?= $aRoom['gia'] ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -155,7 +177,8 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                                 <input type="hidden" id="bookRoom_idPhong"
                                                        value="<?= $aRoom['MaPhong'] ?>">
                                                 <div class="col-sm-10">
-                                                    <input type="text" id="bookRoom_tenPhong" disabled readonly
+                                                        <input type="text" id="bookRoom_tenPhong" disabled readonly
+                                                           class="form-control"
                                                            value="<?= $aRoom['tenPhong'] ?>">
                                                 </div>
                                             </div>
