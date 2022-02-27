@@ -68,7 +68,7 @@ class BlogController
         try {
             $id=BlogModel::delete($MaKS);
             if ($id) {
-                URL::redirect('a.listHotel');
+                URL::redirect('a.listBlog');
             } else {
                 throw new Exception('sorry, the hotel had not delete successfully');
             }

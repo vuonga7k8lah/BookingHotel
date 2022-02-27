@@ -18,7 +18,9 @@ class BlogModel
         }
         return $id;
     }
-
+    public static function delete($id){
+        return DB::Connect()->query("DELETE FROM `blogs` WHERE id=".$id);
+    }
     public static function getBlogs()
     {
         return DB::Connect()->query("SELECT * FROM blogs")->fetch_all();

@@ -54,6 +54,7 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                 </div>
                 <div class="col-lg-4 sidebar ftco-animate">
                     <div class="sidebar-box">
+
                         <button type="button" id="btn-booking_<?= $aRoom['MaPhong'] ?>" class="btn btn-lg btn-primary"
                                 style="display: block;margin:0
                         auto">Đặt Ngay
@@ -130,14 +131,14 @@ $srcHotel = json_decode($aHotel['image'], true)[0]
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đến</label>
                                             <div class="col-sm-10">
                                                 <input type="datetime-local" id="bookRoom_startDate"
-                                                       value="<?= date('Y-m-d\TH:i:s') ?>">
+                                                       value="<?= date('Y-m-d') ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="staticEmail" class="col-sm-2 col-form-label">Ngày Đi</label>
                                             <div class="col-sm-10">
                                                 <input type="datetime-local" id="bookRoom_endDate"
-                                                       value="<?= date('Y-m-d\TH:i:s', strtotime("+1 day")) ?>">
+                                                       value="<?= date('Y-m-d', strtotime("+1 day")) ?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
