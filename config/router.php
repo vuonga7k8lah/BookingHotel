@@ -5,8 +5,8 @@ return [
         // Home
         ''                  => 'BookingHotel\Controllers\Shop\Home\HomeController@getView',
         // Home
-        'contact'                  => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewContact',
-        'about'                  => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewAbout',
+        'contact'           => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewContact',
+        'about'             => 'BookingHotel\Controllers\Shop\Contact\ContactController@getViewAbout',
         // Display
         'location/'         => 'BookingHotel\Controllers\Shop\Display\DisplayController@getListHotel',
         'detailsRoom/'      => 'BookingHotel\Controllers\Shop\Display\DisplayController@getDetailsRoom',
@@ -19,7 +19,6 @@ return [
         //detail Blog
         'detailBlog/'       => 'BookingHotel\Controllers\Shop\Blog\BlogController@getViewDetail',
         'listBlog/'         => 'BookingHotel\Controllers\Shop\Blog\BlogController@getListBlog',
-
         ////----------------------API-----------
 
 
@@ -89,6 +88,7 @@ return [
         'search-hotels'  => 'BookingHotel\Controllers\API\Search\SearchController@getSearchHotel',
         //BookRoom
         'bookRooms'      => 'BookingHotel\Controllers\API\BookRoom\BookRoomController@handleBookRoom',
+        'deleteBookRoom' => 'BookingHotel\Controllers\Shop\BookRoom\BookRoomController@deleteBookRoom',
 
         //Rating
         'isUserBookRoom' => 'BookingHotel\Controllers\API\Rating\RatingController@checkUserOrderRoom',

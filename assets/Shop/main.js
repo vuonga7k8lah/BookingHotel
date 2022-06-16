@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    for (let i = 1; i < 50; i++) {
+    for (let i = 1; i < 100; i++) {
         $('#btn-hotel_' + i).click(function () {
             $('#exampleModal_' + i).modal({
                 'backdrop': true,
@@ -71,5 +71,33 @@ $(document).ready(function () {
             )
         }
     });
-
+    $('#chat-message').on('click',function () {
+        document.querySelectorAll('.cc-1apq')[0].setAttribute('data-visible', true);
+    })
+    for (let i = 1; i < 100; i++) {
+        $('#huyDon' + i).click(function () {
+            let status = confirm("Bạn thật sự muốn huỷ phòng này chứ?");
+            if (status){
+                $.ajax({
+                    type: "POST",
+                    url: GLOBAL_HOTEL.url + 'deleteBookRoom',
+                    data: {
+                        orderID: i
+                    },
+                    success: function(response)
+                    {
+                        let jsonData = JSON.parse(response);
+                        if (jsonData.status === "success")
+                        {
+                            location.reload();
+                        }
+                        else
+                        {
+                            alert(jsonData.message);
+                        }
+                    }
+                })
+            }
+        });
+    }
 })

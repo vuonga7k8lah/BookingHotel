@@ -25,8 +25,8 @@ $aUser=\BookingHotel\Models\UserModel::getUserWithID($_SESSION['userID']);
                                     <div class="mt-3">
                                         <h4><?=$aUser['hoTen']?></h4>
                                         <p class="text-secondary mb-1"><?=$aUser['email']?></p>
-                                        <button class="btn btn-primary">Follow</button>
-                                        <button class="btn btn-outline-primary">Message</button>
+<!--                                        <button class="btn btn-primary">Follow</button>-->
+                                        <button class="btn btn-outline-primary" id="chat-message">Message</button>
                                     </div>
                                 </div>
                             </div>
@@ -77,8 +77,15 @@ $aUser=\BookingHotel\Models\UserModel::getUserWithID($_SESSION['userID']);
                                         <h6 class="card-title">Ngày Đến:<?=$aItem[3]?></h6>
                                         <h6 class="card-title">Ngày Trả:<?=$aItem[4]?></h6>
                                         <p class="card-text">Tên Phòng:<?=$aItem[1]?></p>
-                                        <p href="#" class="btn btn-primary" style="display: block;margin: 0 auto">Giá:
+                                        <p class="btn btn-primary" style="display: block;margin: 0 auto;
+                                        background-color: white;color: #0b0b0b">Giá:
                                             <?=$aItem[2]?></p>
+                                        <br>
+                                        <button id="huyDon<?=$aItem[6]?>" data-order="<?=$aItem[0]?>" class="btn
+                                        btn-primary"
+                                                style="display:
+                                        block;margin: 0
+                                        auto">Huỷ đặt phòng</button>
                                     </div>
                                 </div>
                             </div>

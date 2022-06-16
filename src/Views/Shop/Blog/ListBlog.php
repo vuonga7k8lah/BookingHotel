@@ -15,7 +15,7 @@ require_once 'src/Views/Shop/navigation.php';
                     <div class="text">
                         <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home</a></span>
                             <span>Blog</span></p>
-                        <h1 class="mb-4 bread">Blog</h1>
+                        <h1 class="mb-4 bread">Visiting the place</h1>
                     </div>
                 </div>
             </div>
@@ -26,8 +26,7 @@ require_once 'src/Views/Shop/navigation.php';
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Read Blog</span>
-                    <h2>Recent Blog</h2>
+                    <h2>List posts visiting the place</h2>
                 </div>
             </div>
             <div class="row d-flex">

@@ -52,8 +52,8 @@ $LatLng = explode(',',$aHotel['diaChi']);
                         </div>
                         <form>
                             <input type="hidden" name="TenPhong" id="TenPhong" value="<?= $aHotel['tenKS'] ?>">
-                            <input type="hidden" name="LatLng0" id="LatLng0" value="<?= $LatLng[0] ?>">
-                            <input type="hidden" name="LatLng1" id="LatLng1" value="<?= $LatLng[1] ?>">
+                            <input type="hidden" name="LatLng0" id="LatLng0" value="<?= trim($LatLng[0]) ?>">
+                            <input type="hidden" name="LatLng1" id="LatLng1" value="<?= trim($LatLng[1]) ?>">
                         </form>
                         <?php include getcwd() . '/src/Views/Shop/Comment/ViewCommentRating.php'; ?>
                     </div>

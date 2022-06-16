@@ -84,6 +84,14 @@ class LoginController
 
     public function handleLogout()
     {
+        if (!empty($_COOKIE)){
+            foreach ($_COOKIE as $key=>$value){
+                unset($_COOKIE[$key]);
+                setcookie($key, null, -1, '/');
+            }
+        }
+        unset($_COOKIE['crisp-client%2Fsocket%2F54e61e15-d653-477c-ba55-d88862973a0c']);
+        unset($_COOKIE['crisp-client%2Fsession%2F54e61e15-d653-477c-ba55-d88862973a0c']);
         Session::destroyAll();
         URL::redirect('');
     }

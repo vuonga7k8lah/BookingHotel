@@ -9,12 +9,12 @@ $aRowKS=\BookingHotel\Models\HotelModel::getHotels();
 ?>
     <div class="right">
         <div class="right__content">
-            <div class="right__title">Add Room</div>
+            <div class="right__title">Add Blogs</div>
             <div class="right__table">
-                <?php if (isset($_SESSION['error_addLocation'])): ?>
+                <?php if (isset($_SESSION['error_addBlog'])): ?>
                     <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <?= $_SESSION['error_addLocation'] ?>
+                        <?= $_SESSION['error_addBlog'] ?>
                     </div>
                 <?php endif ?>
                 <form action="<?= URL::uri('a.addBlog'); ?>" method="POST" enctype="multipart/form-data" novalidate>

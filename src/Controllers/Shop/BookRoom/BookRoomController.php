@@ -73,4 +73,16 @@ class BookRoomController
             die();
         }
     }
+
+    public function deleteBookRoom()
+    {
+        $aData = $_POST;
+        if (isset($aData['orderID'])) {
+            $status = OrderModel::deleteOrder($aData['orderID']);
+            echo json_encode([
+                'message' => 'Phòng đã được xoá.',
+                'status'  => 'success'
+            ]);
+        }
+    }
 }

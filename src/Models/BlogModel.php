@@ -58,7 +58,7 @@ class BlogModel
             $query [] = " countView = " .$aData['countView'];
         }
         return DB::Connect()->query("UPDATE `blogs` SET " . implode(',', $query) .
-            ",`createDate`=null WHERE id='" . $id . "'");
+            " WHERE id='" . $id . "'");
     }
 
     public static function getBlogsLimit(int $page = 1, int $limit = 6)

@@ -33,6 +33,12 @@ class OrderModel
 		return $query->num_rows > 0;
 	}
 
+	public static function deleteOrder($maOrder): bool
+    {
+        $query = DB::Connect()->query("DELETE FROM orders WHERE MaOrder=".$maOrder);
+        return !empty($query);
+    }
+
 	public static function getOrderIDWithUserIDAndRoomID($userID, $roomID)
 	{
 		$query = DB::Connect()->query("SELECT MaOrder FROM orders WHERE MaUser=" . $userID . " AND MaPhong= '" .
@@ -50,7 +56,7 @@ class OrderModel
 	public static function getListOrderByUserID($userID)
 	{
 		$sql
-			= "SELECT hotels.tenKS,rooms.tenPhong,orders.gia,orders.startDate,orders.endDate,users.qrcode FROM orders JOIN users ON orders.MaUser=users.ID JOIN rooms on orders.MaPhong=rooms.MaPhong JOIN hotels ON rooms.MaKS=hotels.MaKS WHERE orders.MaUser={$userID}";
+			= "SELECT hotels.tenKS,rooms.tenPhong,orders.gia,orders.startDate,orders.endDate,users.qrcode,orders.MaOrder FROM orders JOIN users ON orders.MaUser=users.ID JOIN rooms on orders.MaPhong=rooms.MaPhong JOIN hotels ON rooms.MaKS=hotels.MaKS WHERE orders.MaUser={$userID}";
 		$query = DB::Connect()->query($sql)->fetch_all();
 		return is_array($query) ? $query : [];
 	}
